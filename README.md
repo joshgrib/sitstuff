@@ -13,40 +13,40 @@ That's what inspired me to make a tool to see all possible schedules you could h
 So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/), you can request the xml for any semester. I take the xml and a list of courses and pull out the info I need, and turn it into a big nested dictionary. Then I go through all the courses and sections, find all possible combinations, and check for conflicts. Any schedules with no conflicts are put into a new dictionary, and sent through flask to make the HTML to display them for the user.
 
 ##Python libraries
-*flask* - the web framework that kidna runs everything
+**flask** - the web framework that kidna runs everything
 
-*json* - Course combos are store as JSON in a cookie
+**json** - Course combos are store as JSON in a cookie
 
-*os* - to remove files that are temporarily saved (like the xml from the Scheduler API)
+**os** - to remove files that are temporarily saved (like the xml from the Scheduler API)
 
-*random* - to get a random number as a temporary password for the admin area
+**random** - to get a random number as a temporary password for the admin area
 
-*smtplib* - to text me the password for the admin area
+**smtplib** - to text me the password for the admin area
 
-*hashlib* - to encrypt the password for the admin area
+**hashlib** - to encrypt the password for the admin area
 
-*pickle* - to store course info as a list of class objects
+**pickle** - to store course info as a list of class objects
 
-*urllib* -  to get the xml from the scheduler api
+**urllib** -  to get the xml from the scheduler api
 
-*xml.etree.ElementTree* - to turn the xml into something python can work with
+**xml.etree.ElementTree** - to turn the xml into something python can work with
 
-*re* - regex matching used in xml parsing
+**re** - regex matching used in xml parsing
 
-*itertools* - to find all possible course combos
+**itertools** - to find all possible course combos
 
 ##Key files
-*run.py* - the main file for flask - runs the website
+**run.py** - the main file for flask - runs the website
 
-*course_class.py* - a class to represent a course
+**course_class.py** - a class to represent a course
 
-*scheduler.py* - the script to get feasible schedules
+**scheduler.py** - the script to get feasible schedules
 
-*secrets.py* - the secret stuff to keep stuff secure
+**secrets.py** - the secret stuff to keep stuff secure
 
-*settings.py* - some macro-type-stuff to control how the app works
+**settings.py** - some macro-type-stuff to control how the app works
 
-*templates/* - all the HTML files
+**templates/** - all the HTML files
 
 ##Contributing
 Clone the repo, make a secrets.py with the following:
