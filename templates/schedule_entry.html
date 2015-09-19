@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Enter {{ quantity }} courses to schedule</h3>
+    <b><u>BE SURE</u> to put a space between the letters and the numbers, or else it wont get scheduled. Ex: CS 115, not CS115.<br>
+    You don't need to add recitation, labs, or lectures seperately, it does that for you.</b>
+    <form action="/schedules" method="POST">
+        {% for i in range(1,(quantity+1)) %}
+            <b>Course {{ i }}:</b><br>
+            <input type="text" name="text{{ i }}" value="{{ default_vals[i-1] }}"><br>
+        {% endfor %}
+        <input type="submit" name="my-form" value="Send">
+    </form>
+    *You may need to reload the page to get results*
+{% endblock %}

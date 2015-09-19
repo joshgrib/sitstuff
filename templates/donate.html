@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Donation Info</h2>
+    <br>
+    This costs me money to host. I suggest $2 for unlimited use, if everyone did that then I could easily host it and <a href='http://www.sitstuff.com' target='_blank'>another website</a> for Stevens students for the foreseeable future.
+    <hr>
+    <br>
+    <h3>Paypal button (easiest)</h3>
+    You <b>DO NOT</b> need a paypal account! There is a button to just use a card.
+    <br>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+    <hr>
+    <h3>Bitcoin (coolest)</h3>
+    Address is <code style="color:green;font-size:150%">1En9iGLQ9LcuEyiNQymDZFn8x5dwNmBVtV</code><br>
+    I use <a href="https://www.coinbase.com/" target="_blank">coinbase</a>, it's pretty cool.
+{% endblock %}

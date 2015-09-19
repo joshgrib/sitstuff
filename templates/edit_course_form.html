@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Edit course info below</h3>
+    <form action="/edit_course" method="POST">
+        Course department     <input type="text" name="course_dept"   value="{{ course.dept }}">
+        Course number     <input type="text" name="course_num"        value="{{ course.num }}">
+        Course name     <input type="text" name="course_name"         value="{{ course.name }}">
+        Lecture info:   <input type="text" name="lecture_info"        value="{{ course.lecture }}">
+        Recitation info:<input type="text" name="recitation_info"     value="{{ course.recitation }}">
+        Lab info:        <input type="text" name="lab_info"           value="{{ course.lab }}">
+        Homework info:  <input type="text" name="homework_info"       value="{{ course.homework }}">
+        Exam info:      <input type="text" name="exams_info"          value="{{ course.exams }}">
+        Finals info:    <input type="text" name="final_info"          value="{{ course.final }}">
+        Secret:   <input type="text" name="admin_secret" value="None">
+        <input type="submit" name="course-form" value="Edit course">
+    </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Enter course info below</h3>
+    <form action="/add_course" method="POST">
+        Course department     <input type="text" name="course_dept"     value="AA">
+        Course number     <input type="text" name="course_num"     value="###">
+        Course name     <input type="text" name="course_name"     value="Intro to course naming">
+        Lecture info:   <input type="text" name="lecture_info"    value="None">
+        Recitation info:<input type="text" name="recitation_info" value="None">
+        Lab info:<input type="text" name="lab_info" value="None">
+        Homework info:  <input type="text" name="homework_info"   value="None">
+        Exam info:      <input type="text" name="exams_info"      value="None">
+        Finals info:    <input type="text" name="final_info"      value="None">
+        Secret:   <input type="text" name="admin_secret" value="None">
+        <input type="submit" name="course-form" value="Add course">
+    </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% for user in users %}
+  {{ user }}<br>
+{% endfor %}
+
+<div class=pagination>
+  {% if page != 1 %}
+    <a href="/users/page/{{page - 1}} ">&laquo; Prev</a>
+  {% else %}
+    &laquo; Prev
+  {% endif %}
+  |||
+  {% if last_page %}
+    Next &raquo;
+  {% else %}
+    <a href="/users/page/{{page + 1}}">Next &raquo;</a>
+  {% endif %}
+</div>

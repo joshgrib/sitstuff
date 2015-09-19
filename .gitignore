@@ -1,0 +1,4 @@
+*.pyc
+secrets.py
+templates/updating_pythonAnywhere
+tmp_test.py

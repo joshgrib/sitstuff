@@ -1,0 +1,65 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+{% if title %}
+    <title>SIT Stuff | {{ title }}</title>
+{% else %}
+    <title>SIT Stuff</title>
+{% endif %}
+<meta name="Description" lang="en" content="Resource website for Stevens Institute of Technology students">
+<!-- Based on the template at http://foundation.zurb.com/templates/blog.html#-->
+<link rel="shortcut icon" href="http://www.stevens.edu/sit/sites/sit/files/favicon.ico" type="image/vnd.microsoft.icon">
+<meta name="author" content="Josh Gribbon">
+<link rel=stylesheet type=text/css href="http://sitstuff.com/book/style.css">
+</head>
+<body>
+
+<div class="row">
+<div class="large-12 columns">
+<div class="nav-bar right">
+<ul class="button-group">
+<li><a href="/index" class="button">Home</a></li>
+<li><a href="/courses" class="button">Courses/Books</a></li>
+<li><a href="/how_many" class="button">Scheduler</a></li>
+<li><a href="/donate" class="button">Donate</a></li>
+</ul>
+</div>
+<h1><a href="/index">SIT Stuff</a>-{{ title }}</h1>
+<hr/>
+</div>
+</div>
+
+<div class="row">
+      {% block content %}{% endblock %}
+</div>
+
+
+<footer class="row">
+<div class="large-12 columns">
+<hr/>
+<div class="row">
+<div class="large-6 columns">
+<p>Send any course info, books, etc to sitstuffmail@gmail.com</p>
+</div>
+<div class="large-6 columns">
+<ul class="inline-list right">
+<li><a href="/index">Home</a></li>
+<li><a href="/courses">Courses/Books</a></li>
+<li><a href="/how_many">Scheduler</a></li>
+<li><a href="/donate">Donate</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</body>
+{% if visited == 'False' %}
+    <script language="Javascript">
+      alert ("Hi! I have to pay to host this site, so if you like it please consider donating. This will only pop up once a month.")
+    </script>
+{% endif %}
+</html>
+

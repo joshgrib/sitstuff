@@ -1,0 +1,53 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% block content %}
+    <div class=pagination>
+    <h3>
+      {% if page != 1 %}
+        <a href="/sched/page/{{page - 1}} ">&laquo; Prev Page</a>
+      {% else %}
+        &laquo; Prev Page
+      {% endif %}
+      |||
+      {% if last_page %}
+        Next Page &raquo;
+      {% else %}
+        <a href="/sched/page/{{page + 1}}">Next Page &raquo;</a>
+      {% endif %}
+    </h3>
+    </div>
+
+    <h2>You have {{ combo_amount }} posssible schedules</h2>
+
+    *Seeing some blank schedules or cut off boxes? The schedule images are basically windows into the stevens scheduler website, and sometimes it loads weird. Just scroll a little in the box are it should fix itself!
+
+    {% for combo in combos %}
+    <div id="large-3 columns">
+        <b>Schedule {{ combo }}:</b> <a href="{{ combos[combo]['url'] }}" target="_blank">{{ combos[combo]['list'] }}</a>
+        </br>
+        <div id="my-div">
+            <iframe src="{{ combos[combo]['url'] }}" id="my-iframe" scrolling="yes" width="100%" height="100%">
+            </iframe>
+        </div>
+        </br>
+    </div>
+    <hr>
+    {% endfor %}
+
+    <div class=pagination>
+    <h3>
+      {% if page != 1 %}
+        <a href="/sched/page/{{page - 1}} ">&laquo; Prev Page</a>
+      {% else %}
+        &laquo; Prev Page
+      {% endif %}
+      |||
+      {% if last_page %}
+        Next Page &raquo;
+      {% else %}
+        <a href="/sched/page/{{page + 1}}">Next Page &raquo;</a>
+      {% endif %}
+    </h3>
+    </div>
+
+{% endblock %}
