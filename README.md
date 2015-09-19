@@ -2,56 +2,65 @@
 
 [Website](http://www.sitstuff.com)
 
-I'm pretty sure a few CS students at Stevens have tried something like this already, but I'm doing it anyway. This is a tool to take all the classes you need to take and look at the xml that the calendar runs off, then show you your possible schedules
+This is a website I made to be a resource for the students of Stevens Institute of Technology
 
 ##Background
-So at Stevens the only way to reasonably figure out your schedule for future semesters is to use the course scheduler available [here](https://web.stevens.edu/scheduler/). You can search for classes and see different offerings, and work out a schedule that works.
+So at Stevens the only way to reasonably figure out your schedule for future semesters is to use the course scheduler available [here](https://web.stevens.edu/scheduler/). You can search for classes and see different offerings, and work out a schedule that works.To figure out your schedule you basically just need to do trial and error until you find one that works and you're relatively happy with. I want to make it so you enter the courses you need to take, and you can see all the schedules you could have.
 
-To figure out your schedule you basically just need to do trial and error until you find one that works and you're relatively happy with. I want to make it so you enter the courses you need to take, and you can see all the schedules you could have.
+That's what inspired me to make a tool to see all possible schedules you could have, given the classes you want to take. Then I wanted to make it a web app, then it inherited the goal of another website I had to host course info.
 
 ##Approach
-So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/), which I'm surprised is documented as well as it is for anyone to use, you can request the xml for any semester. I take the xml and a list of courses and pull out the info I need, and turn it into a big nested dictionary. Then I go through all the courses and sections, find all possible combinations, and check for conflicts. Any schedules with no conflicts are put into a new dictionary, and sent through flask to make the HTML to display them for the user.
+So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/), you can request the xml for any semester. I take the xml and a list of courses and pull out the info I need, and turn it into a big nested dictionary. Then I go through all the courses and sections, find all possible combinations, and check for conflicts. Any schedules with no conflicts are put into a new dictionary, and sent through flask to make the HTML to display them for the user.
 
-###Python libraries
-####flask
-The web app framework I'm using to make the program run online and keep everything organized. It was annoying to learn but it was worth refactoring everything. Its much easier when everything is working the way it's supposed to
-####xml.etree.ElementTree
-For XML parsing. This library turn XML data into nested dictionaries. Then I can go through, edit them, and pull out what I need
-####re
-Regex
-####itertools
-For finding all possible combinations, and for finding all possible comparisons to make within a combination
-####urllib
-Gets the XML data from the API using the url
-####os
-Delete files
+##Python libraries
+*flask* - the web framework that kidna runs everything
 
-###Files
+*json* - Course combos are store as JSON in a cookie
+
+*os* - to remove files that are temporarily saved (like the xml from the Scheduler API)
+
+*random* - to get a random number as a temporary password for the admin area
+
+*smtplib* - to text me the password for the admin area
+
+*hashlib* - to encrypt the password for the admin area
+
+*pickle* - to store course info as a list of class objects
+
+*urllib* -  to get the xml from the scheduler api
+
+*xml.etree.ElementTree* - to turn the xml into something python can work with
+
+*re* - regex matching used in xml parsing
+
+*itertools* - to find all possible course combos
+
+##Key files
+*run.py* - the main file for flask - runs the website
+
+*course_class.py* - a class to represent a course
+
+*scheduler.py* - the script to get feasible schedules
+
+*secrets.py* - the secret stuff to keep stuff secure
+
+*settings.py* - some macro-type-stuff to control how the app works
+
+*templates/* - all the HTML files
+
+##Contributing
+Clone the repo, make a secrets.py with the following:
 ```
-/course-scheduler               #Holds the app
-    /static                     #
-        style.css               #The CSS for the site
-    /templates                  #
-        add_course_form.html    #Allows admin to add a course
-        admin_form.html         #The entry point for the admin
-        base.html               #The base for all other pages
-        courses.html            #List of all course info and resources
-        donate.html             #Donation page
-        edit_course_form.html   #Allows admin to edit courses
-        how_many.html           #Asks how many courses someone wants to
-                                 schedule
-        index.html              #The home page
-        sched.html              #Displays computed schedules
-        schedule_entry.html     #Asks what courses someone wants to schedule
-    .gitignore                  #Tells git what not to track
-    LICENSE                     #The license on the software
-    README.md                   #This page
-    courses.json                #Stores all course info
-    run.py                      #Starts the app
-    scheduler.py                #Computes schedules given a list of courses
-    secrets.py                  #Passwords for stuff
-    settings.py                 #Things to change the behavior of the site
+def send_message():
+    login={}
+    login['emailUsername'] = "USERNAME@gmail.com"
+    login['emailPassword'] = "PASSWORD"
+    login['phone_number']  = '##########@vtext.com'
+    return login
+def app_secret():
+    return "Some_secret_thing_for_the_app"
 ```
 
-###Future development ideas (also see issues)
-* Add sorting to show certain schedules before others (e.g. least morning classes, no night classes, fridays off)
+Then you should be able to run it locally by going to the main directory and running `python run.py` and then pointing your browser to `127.0.0.1:5000`. The stylesheet is pulled from my server, but you can easily add your own or modify mine by making a new file and changing `templates/base.html` to use the new one.
+
+Mess around on your own, or add a feature and create a pull request.
