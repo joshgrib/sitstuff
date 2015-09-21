@@ -293,7 +293,33 @@ def admin_view_post():
                 max_age=None)
             return resp
         elif str(request.form['action_choice']) == 'edit_book':
-            pass
+            courses = course_class.load_data()
+            for x in courses:
+                if str(x) == request.form['course_choice']:
+                    course = x
+            count = 0
+            urls = {}
+            names = {}
+            for book in x.books:
+                urls[count] = book
+                names[count] = x.books[book]
+                count += 1
+            resp = make_response(render_template(
+                'edit_book_form.html',
+                course=course,
+                amount=count,
+                urls=urls,
+                names=names,
+                title='Edit'))
+            resp.set_cookie(
+                'course_choice',
+                str(request.form['course_choice']),
+                max_age=None)
+            resp.set_cookie(
+                'amount',
+                str(count),
+                max_age=None)
+            return resp
     return 'Sorry you cant use this page.<br><b>' + str(request.form["admin_secret"]) + '</b> is not the secret code. '
 
 
@@ -400,6 +426,35 @@ def add_book_view_post():
             if str(course) == c_name:
                 course.books[book_url] = book_name
         course_class.save_data(courses)
+
+        return render_template("index.html", title='Home', visted='True')
+
+
+@app.route('/edit_book', methods=['GET', 'POST'])
+def edit_book_view_post():
+    text = request.form["admin_secret"]
+    j = hashlib.md5()
+    j.update(str(text))
+    hash_text = j.hexdigest()
+    hash_code = session['hash_code']
+    #for debugging just make it if True:
+    if True:#hash_code == hash_text:
+        amount = int(request.cookies.get('amount'))
+        book_name = {}
+        book_url = {}
+        for i in range(amount):
+            book_name[i] = str(request.form['book_name_' + str(i)])
+            book_url[i]  = str(request.form['book_url_' + str(i)])
+        c_name = request.cookies.get('course_choice')
+
+        courses = course_class.load_data()
+        for course in courses:
+            if str(course) == c_name:
+                course.books = {}
+                for i in range(amount):
+                    course.books[book_url[i]] = book_name[i]
+        course_class.save_data(courses)
+
 
         return render_template("index.html", title='Home', visted='True')
 
