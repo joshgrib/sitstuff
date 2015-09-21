@@ -48,6 +48,15 @@ So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/)
 
 **templates/** - all the HTML files
 
+##Important processes
+**Parsing XML** - The XML file is iterated over in different ways to pull out the info I need to schedule the courses, and all the info is saved as a (pretty nested) dictionary
+
+**Scheduling** - Given the list of courses to be scheduled, all possible combinations are found. Then each combination is checked against the dictionary from "Parsing XML" to find conflicts. If no conflicts are found, the combination is added to a lsit of good combos
+
+**`Course` object** - all courses for the `Courses` page are store in the class defined by the `course_class` module. Department, number, name, lecture/recitation/lab/homework/exams/final info are attributes, books are a dictionary with the key/value pair file_name/name, where file_name is the name of the file in the location specified in the `getHTML()` method of the class.
+
+**Data storage** - The xml file is not stored, it is saved temporarily, parsed and deleted. This allows each schedule to always have the most recent info. The course info is stored in `courses.dat`. All the `Course` objects are stored in a list, then that list is saved to (and loaded from) the file through pickle. The functions `save_data(data)` and `load_data()` and in the `course_class` module.
+
 ##Contributing
 Clone the repo, make a secrets.py with the following:
 ```

@@ -9,7 +9,7 @@
         <a href="#{{ letters }}">{{ letters }}</a>-
     {% endfor %}
     <a href="#{{letter_links[-1]}}">{{ letter_links[-1] }}</a></h4>
-    Note: All the books here are just for my use and are definitely not allowed to be used by anyone else<br>
+    Note: All the books here are just for my use and are not allowed to be used by anyone else. The links are so you can make sure you have the current version of the book, then you must buy your own copy to abide by copyright laws.<br>
 
     {% for course in sorted_c %}
         {{ course.getHTML()|safe }}
