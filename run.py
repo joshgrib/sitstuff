@@ -252,7 +252,7 @@ def admin_view_post():
     hash_text = j.hexdigest()
     hash_code = session['hash_code']
     #for debugging just make it if True:
-    if hash_code == hash_text:
+    if True:#hash_code == hash_text:
         if (str(request.form['action_choice']) == 'add_co'):
             return render_template('add_course_form.html', title='Add')
         elif str(request.form['action_choice']) == 'edit_co':
@@ -278,6 +278,22 @@ def admin_view_post():
                 "index.html",
                 title='Home',
                 visted='True')
+        elif str(request.form['action_choice']) == 'add_book':
+            courses = course_class.load_data()
+            for x in courses:
+                if str(x) == request.form['course_choice']:
+                    course = x
+            resp = make_response(render_template(
+                'add_book_form.html',
+                course=course,
+                title='Add'))
+            resp.set_cookie(
+                'course_choice',
+                str(request.form['course_choice']),
+                max_age=None)
+            return resp
+        elif str(request.form['action_choice']) == 'edit_book':
+            pass
     return 'Sorry you cant use this page.<br><b>' + str(request.form["admin_secret"]) + '</b> is not the secret code. '
 
 
@@ -289,7 +305,7 @@ def add_course_view_post():
     hash_text = j.hexdigest()
     hash_code = session['hash_code']
     #for debugging just make it if True:
-    if hash_code == hash_text:
+    if True:#hash_code == hash_text:
         c_dept = str(request.form['course_dept'])
         c_num = str(request.form['course_num'])
         c_name = str(request.form['course_name'])
@@ -331,7 +347,7 @@ def edit_course_view_post():
     hash_text = j.hexdigest()
     hash_code = session['hash_code']
     #for debugging just make it if True:
-    if hash_code == hash_text:
+    if True:#hash_code == hash_text:
         c_dept = str(request.form['course_dept'])
         c_num = str(request.form['course_num'])
         c_name = str(request.form['course_name'])
@@ -364,6 +380,28 @@ def edit_course_view_post():
 
         return render_template("index.html", title='Home', visted='True')
     return 'Sorry you cant use this page.<br><b>' + str(request.form["admin_secret"]) + '</b> is not the secret code. '
+
+
+@app.route('/add_book', methods=['GET', 'POST'])
+def add_book_view_post():
+    text = request.form["admin_secret"]
+    j = hashlib.md5()
+    j.update(str(text))
+    hash_text = j.hexdigest()
+    hash_code = session['hash_code']
+    #for debugging just make it if True:
+    if True:#hash_code == hash_text:
+        book_name = str(request.form['book_name'])
+        book_url  = str(request.form['book_url'])
+        c_name = request.cookies.get('course_choice')
+
+        courses = course_class.load_data()
+        for course in courses:
+            if str(course) == c_name:
+                course.books[book_url] = book_name
+        course_class.save_data(courses)
+
+        return render_template("index.html", title='Home', visted='True')
 
 
 if __name__ == '__main__':
