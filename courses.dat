@@ -805,44 +805,4 @@ Nsg16
 S'Computation and Autonoma'
 p259
 sg18
-Nsba(icourse_class
-Course
-p260
-(dp261
-g3
-S'###'
-p262
-sg5
-NsS'books'
-p263
-(dp264
-S'file3.pdf'
-p265
-S'Advanced Adding Books, Gribbon 3rd Edition'
-p266
-sS'file2.pdf'
-p267
-S'Intro to Editing Books, Gribbon 2nd Edition'
-p268
-ssg6
-Nsg7
-S'AA'
-p269
-sg9
-Nsg10
-Nsg11
-(dp270
-S'file.pdf'
-p271
-S'Intro to Adding Books, Gribbon 1st Edition'
-p272
-sS'file2.pdf'
-p273
-S'Intro to Editing Books, Gribbon 2nd Edition'
-p274
-ssg13
-Nsg16
-S'Intro to course naming'
-p275
-sg18
 Nsba.
