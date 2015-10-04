@@ -603,7 +603,7 @@ V1 midterm with length varying greatly by professor
 p194
 sg11
 (dp195
-Vcal103.pdf
+Vcal103_a.pdf
 p196
 VA World of Ideas
 p197
@@ -805,4 +805,89 @@ Nsg16
 S'Computation and Autonoma'
 p259
 sg18
-Nsba.
+Nsba(icourse_class
+Course
+p260
+(dp261
+g3
+S'334'
+p262
+sg5
+Nsg6
+Nsg7
+S'CS'
+p263
+sg9
+Nsg10
+Nsg11
+(dp264
+sg13
+Nsg14
+S'Three 1-hour lectures per week'
+p265
+sg16
+S'Automata and Computation'
+p266
+sg18
+Nsg19
+S'Weekly/bi-weekly homework assignments'
+p267
+sba(icourse_class
+Course
+p268
+(dp269
+g3
+S'503'
+p270
+sg5
+Nsg6
+Nsg7
+S'CS'
+p271
+sg9
+Nsg10
+Nsg11
+(dp272
+S'cs503.pdf'
+p273
+S'Handbook of Applied Cryptography'
+p274
+ssg13
+Nsg14
+S'One 2.5 hour lecture per week'
+p275
+sg16
+S'Discrete Math for Cryptography'
+p276
+sg18
+Nsg19
+S'Optional packet exercises'
+p277
+sba(icourse_class
+Course
+p278
+(dp279
+g3
+S'383'
+p280
+sg5
+Nsg6
+Nsg7
+S'CS'
+p281
+sg9
+Nsg10
+Nsg11
+(dp282
+sg13
+Nsg14
+S'Three 1-hour lectures per week'
+p283
+sg16
+S'Computer Organization and Programming'
+p284
+sg18
+Nsg19
+S'Two theoretical and two assembly assignments'
+p285
+sba.

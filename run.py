@@ -202,7 +202,7 @@ def admin_view_post():
     hash_text = j.hexdigest()
     hash_code = session['hash_code']
     # for debugging just make it if True:
-    if True:  # hash_code == hash_text:
+    if ((hash_code == hash_text) or DEBUG):
         if (str(request.form['action_choice']) == 'add_co'):
             return render_template('add_course_form.html', title='Add')
         elif str(request.form['action_choice']) == 'edit_co':
@@ -281,7 +281,7 @@ def add_course_view_post():
     hash_text = j.hexdigest()
     hash_code = session['hash_code']
     # for debugging just make it if True:
-    if hash_code == hash_text:
+    if ((hash_code == hash_text) or DEBUG):
         c_dept = str(request.form['course_dept'])
         c_num = str(request.form['course_num'])
         c_name = str(request.form['course_name'])
@@ -323,7 +323,7 @@ def edit_course_view_post():
     hash_text = j.hexdigest()
     hash_code = session['hash_code']
     # for debugging just make it if True:
-    if hash_code == hash_text:
+    if ((hash_code == hash_text) or DEBUG):
         c_dept = str(request.form['course_dept'])
         c_num = str(request.form['course_num'])
         c_name = str(request.form['course_name'])
@@ -367,7 +367,7 @@ def add_book_view_post():
     hash_text = j.hexdigest()
     hash_code = session['hash_code']
     # for debugging just make it if True:
-    if hash_code == hash_text:
+    if ((hash_code == hash_text) or DEBUG):
         book_name = str(request.form['book_name'])
         book_url = str(request.form['book_url'])
         c_name = request.cookies.get('course_choice')
@@ -389,7 +389,7 @@ def edit_book_view_post():
     hash_text = j.hexdigest()
     hash_code = session['hash_code']
     # for debugging just make it if True:
-    if True:  # hash_code == hash_text:
+    if ((hash_code == hash_text) or DEBUG):
         amount = int(request.cookies.get('amount'))
         book_name = {}
         book_url = {}
