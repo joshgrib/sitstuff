@@ -5,17 +5,17 @@
 This is a website I made to be a resource for the students of Stevens Institute of Technology
 
 ##Background
-So at Stevens the only way to reasonably figure out your schedule for future semesters is to use the course scheduler available [here](https://web.stevens.edu/scheduler/). You can search for classes and see different offerings, and work out a schedule that works.To figure out your schedule you basically just need to do trial and error until you find one that works and you're relatively happy with. I want to make it so you enter the courses you need to take, and you can see all the schedules you could have.
+So at Stevens the only way to reasonably figure out your schedule for future semesters is to use the course scheduler available [here](https://web.stevens.edu/scheduler/). You can search for classes and see different offerings, and work out a schedule that suits you best.To figure out your schedule you basically just need to use trial and error until you create one that works and you're relatively happy with. I want to make it so that you can enter the courses you need to take, and all possible schedules will be generated.
 
 That's what inspired me to make a tool to see all possible schedules you could have, given the classes you want to take. Then I wanted to make it a web app, then it inherited the goal of another website I had to host course info.
 
 ##Approach
-So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/), you can request the xml for any semester. I take the xml and a list of courses and pull out the info I need, and turn it into a big nested dictionary. Then I go through all the courses and sections, find all possible combinations, and check for conflicts. Any schedules with no conflicts are put into a new dictionary, and sent through flask to make the HTML to display them for the user.
+So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/), you can request the XML for any semester. I take the XML and a list of courses and pull out the info I need, and turn it into a big nested dictionary. Then I go through all the courses and sections, find all possible combinations, and check for conflicts. Any schedules with no conflicts are put into a new dictionary, and sent through flask to make the HTML to display for the user.
 
 ##Python libraries
-**flask** - the web framework that kidna runs everything
+**flask** - the web framework that kinda runs everything
 
-**json** - Course combos are store as JSON in a cookie
+**json** - Course combos are stored as JSON in a cookie
 
 **os** - to remove files that are temporarily saved (like the xml from the Scheduler API)
 
@@ -38,7 +38,7 @@ So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/)
 ##Key files
 **run.py** - the main file for flask - runs the website
 
-**course_class.py** - a class to represent a course
+**course_class.py** - a python class to represent a course
 
 **scheduler.py** - the script to get feasible schedules
 
@@ -51,11 +51,11 @@ So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/)
 ##Important processes
 **Parsing XML** - The XML file is iterated over in different ways to pull out the info I need to schedule the courses, and all the info is saved as a (pretty nested) dictionary
 
-**Scheduling** - Given the list of courses to be scheduled, all possible combinations are found. Then each combination is checked against the dictionary from "Parsing XML" to find conflicts. If no conflicts are found, the combination is added to a lsit of good combos
+**Scheduling** - Given the list of courses to be scheduled, all possible combinations are found. Then each combination is checked against the dictionary from "Parsing XML" to find conflicts. If no conflicts are found, the combination is added to a list of good combos
 
-**`Course` object** - all courses for the `Courses` page are store in the class defined by the `course_class` module. Department, number, name, lecture/recitation/lab/homework/exams/final info are attributes, books are a dictionary with the key/value pair file_name/name, where file_name is the name of the file in the location specified in the `getHTML()` method of the class.
+**`Course` object** - all courses for the `Courses` page are stored in the class defined by the `course_class` module. Department, number, name, lecture, recitation, lab, homework, exams, and final are attributes, books are a dictionary with the key/value pair file_name/name, where file_name is the name of the file in the location specified in the `getHTML()` method of the class.
 
-**Data storage** - The xml file is not stored, it is saved temporarily, parsed and deleted. This allows each schedule to always have the most recent info. The course info is stored in `courses.dat`. All the `Course` objects are stored in a list, then that list is saved to (and loaded from) the file through pickle. The functions `save_data(data)` and `load_data()` and in the `course_class` module.
+**Data storage** - The xml file is not stored, it is saved temporarily, parsed and deleted. This allows each schedule to always have the most recent info. The course info is stored in `courses.dat`. All the `Course` objects are stored in a list, then that list is saved to (and loaded from) the file through pickle. The functions `save_data(data)` and `load_data()` are in the `course_class` module.
 
 ##Contributing
 Clone the repo, make a secrets.py with the following:
@@ -78,7 +78,7 @@ Jinja2==2.8
 MarkupSafe==0.23
 Werkzeug==0.10.4
 ```
-and then you don't have to worry about changing versions or whatever, and you won't mess up any other project's dependencies that you might have on your machine. Just be sure you're in the virtual environment whenever you're running the app or stuff won't work.
+and then you don't have to worry about changing versions or whatever, and you won't mess up any other projects' dependencies that you might have on your machine. Just be sure you're in the virtual environment whenever you're running the app or stuff won't work.
 
 Then you should be able to run it locally by going to the main directory and running `python run.py` and then pointing your browser to `127.0.0.1:5000`. The stylesheet is pulled from my server, but you can easily add your own or modify mine by making a new file and changing `templates/base.html` to use the new one.
 
