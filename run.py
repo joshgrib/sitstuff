@@ -2,10 +2,9 @@
 
 # Standard libraries
 import json
-import os
+#import os
 import random
 import smtplib
-import random
 import hashlib
 # downloaded
 from flask import Flask, render_template, request, make_response, redirect, session
@@ -83,6 +82,8 @@ def how_many():
         resp = make_response(
             render_template("how_many.html", title='Scheduler', visited='False'))
         resp.set_cookie('visited', 'True', max_age=2592000, path='/')
+        resp.set_cookie('course_errors', '', expires=0)#redundancy because it keeps saving errors
+        resp.set_cookie('course_combos', '', expires=0)
     return resp
 
 
@@ -96,10 +97,12 @@ def how_many_post():
     resp = make_response(render_template(
         "schedule_entry.html", quantity=amount_of_courses, title='Scheduler', default_vals=default_courses))
     resp.set_cookie('course_amount', str(amount_of_courses), max_age=None)
+    resp.set_cookie('course_errors', '', expires=0)#redundancy because it keeps saving errors
+    resp.set_cookie('course_combos', '', expires=0)
     return resp
 
 
-@app.route('/schedules', methods=['GET', 'POST'])
+@app.route('/schedules', methods=['GET','POST'])
 def my_form_post():
     text_list = []
     amount_of_courses = int(request.cookies.get('course_amount'))
@@ -123,7 +126,7 @@ def my_form_post():
     resp = make_response(redirect('/sched'))
     resp.set_cookie('course_combos', '', expires=0)
     resp.set_cookie('course_combos', json.dumps(my_combos))
-    resp.set_cookie('course_errors', '', expires=0)
+    resp.set_cookie('course_errors', '', expires=0)#redundancy because it keeps saving errors
     resp.set_cookie('course_errors', json.dumps(my_errors))
     return resp
 
@@ -416,7 +419,18 @@ def edit_book_view_post():
 
         return render_template("index.html", title='Home', visted='True')
 
+@app.errorhandler(500)
+def internal_error(error):
+    return render_template('505.html'), 505
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html'), 404
+
+@app.errorhandler(403)
+def forbidden_error(error):
+    return render_template('403.html'), 403
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
     session['hash_code'] = ""
