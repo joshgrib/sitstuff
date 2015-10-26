@@ -19,6 +19,12 @@
 
     <h2>You have {{ combo_amount }} posssible schedules</h2>
 
+    <h4>...with {{ err_amount }} errors</h4>
+    <b>Errors:</b>
+    {% for error in errors %}
+      {{ error }},
+    {% endfor %}
+
     *Seeing some blank schedules or cut off boxes? The schedule images are basically windows into the stevens scheduler website, and sometimes it loads weird. Just scroll a little in the box are it should fix itself!
 
     {% for combo in combos %}

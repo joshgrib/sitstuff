@@ -119,8 +119,10 @@ def my_form_post():
 
     real_course_list = course_list.split(',')
     my_combos = scheduler.schedule(real_course_list)
+    my_errors = scheduler.get_errors()
     resp = make_response(redirect('/sched'))
     resp.set_cookie('course_combos', json.dumps(my_combos))
+    resp.set_cookie('course_errors', json.dumps(my_errors))
     return resp
 
 
@@ -149,7 +151,9 @@ def isLastPage(page_num, count_of_combos, per_page):
 @app.route('/sched/page/<int:page>')
 def scheduleMe(page):
     deezCombos = json.loads(request.cookies.get('course_combos'))
+    deezErrors = json.loads(request.cookies.get('course_errors'))
     count = len(deezCombos)
+    err_count = len(deezErrors)
     if count > PER_PAGE:
         this_page_combos = getCombosForPage(page, PER_PAGE, count, deezCombos)
     else:
@@ -161,8 +165,10 @@ def scheduleMe(page):
                            title="Scheduler",
                            combos=this_page_combos,
                            combo_amount=str(count),
+                           err_amount=str(err_count),
                            page=page,
-                           last_page=last_page)
+                           last_page=last_page,
+                           errors=deezErrors)
 
 
 def sendMsg():

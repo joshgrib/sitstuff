@@ -87,7 +87,7 @@ def getCallNums(this_root):  # called from schedule()
         call_numbers[section_name] = call_num
     return call_numbers
 
-
+global_class_error_list = []
 def getBigDict(this_root):  # called from schedule()
     """Given the root of the xml tree, this will parse the xml and return a nested dictionary of courses, sections, and meeting times"""
     big_dict = {}
@@ -119,19 +119,26 @@ def getBigDict(this_root):  # called from schedule()
 
         for meeting in course:  # write the meetings to the section lists
             info = meeting.attrib
-            day = info['Day']
-            startTime = info['StartTime']
-            endTime = info['EndTime']
-            # if the exact same meeting is already in the list
-            if [day, startTime, endTime] in big_dict[course_big][course_section]:
-                break  # then dont add another!
-            if len(day) == 1:  # if this meeting describes one day
-                big_dict[course_big][course_section].append(
-                    [day, startTime, endTime])  # add the meeting time
-            else:  # if multiple days happen at the same time
-                for letter in day:  # add one list for each meeting
+            """
+                Catch the error for 'Day', then maybe add the course to a global list of courses that have errors
+            """
+            try:
+                day = info['Day']
+                startTime = info['StartTime']
+                endTime = info['EndTime']
+                # if the exact same meeting is already in the list
+                if [day, startTime, endTime] in big_dict[course_big][course_section]:
+                    break  # then dont add another!
+                if len(day) == 1:  # if this meeting describes one day
                     big_dict[course_big][course_section].append(
-                        [letter, startTime, endTime])
+                        [day, startTime, endTime])  # add the meeting time
+                else:  # if multiple days happen at the same time
+                    for letter in day:  # add one list for each meeting
+                        big_dict[course_big][course_section].append(
+                            [letter, startTime, endTime])
+            except KeyError:
+                global global_class_error_list
+                global_class_error_list += str(course.get('Section'))
     return big_dict
 
 
@@ -263,3 +270,7 @@ def schedule(course_list):
     all_combos = findAllCombos(big_dict, call_numbers)
 
     return all_combos
+
+def get_errors():
+    global global_class_error_list
+    return global_class_error_list
