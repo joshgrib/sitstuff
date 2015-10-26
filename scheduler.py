@@ -138,7 +138,7 @@ def getBigDict(this_root):  # called from schedule()
                             [letter, startTime, endTime])
             except KeyError:
                 global global_class_error_list
-                global_class_error_list += str(course.get('Section'))
+                global_class_error_list.append(str(course.get('Section')))
     return big_dict
 
 
@@ -274,3 +274,7 @@ def schedule(course_list):
 def get_errors():
     global global_class_error_list
     return global_class_error_list
+
+if __name__ == '__main__':
+    schedule(['CS 182','CS 135','PEP 112','PEP 221','CAL 105','MA 222'])
+    print get_errors()

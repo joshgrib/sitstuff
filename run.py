@@ -121,7 +121,9 @@ def my_form_post():
     my_combos = scheduler.schedule(real_course_list)
     my_errors = scheduler.get_errors()
     resp = make_response(redirect('/sched'))
+    resp.set_cookie('course_combos', '', expires=0)
     resp.set_cookie('course_combos', json.dumps(my_combos))
+    resp.set_cookie('course_errors', '', expires=0)
     resp.set_cookie('course_errors', json.dumps(my_errors))
     return resp
 
