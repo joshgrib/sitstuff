@@ -890,4 +890,38 @@ sg18
 Nsg19
 S'Two theoretical and two assembly assignments'
 p285
+sba(icourse_class
+Course
+p286
+(dp287
+g3
+S'284'
+p288
+sg5
+Nsg6
+Nsg66
+S'One recitation per week, given a problem to solve during the recitation'
+p289
+sg7
+S'CS'
+p290
+sg9
+Nsg10
+Nsg11
+(dp291
+S'cs284.pdf'
+p292
+S'Data Structures: Abstraction and Design Using Java, Koffman 2nd Edition'
+p293
+ssg13
+Nsg14
+S'Three 1-hour lectures per week'
+p294
+sg16
+S'Data Structures'
+p295
+sg18
+Nsg19
+S'Around four assignments for the semester, usually making a class to represent a data structure'
+p296
 sba.

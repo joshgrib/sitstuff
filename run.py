@@ -92,7 +92,7 @@ def how_many_post():
     amount_of_courses = int(course_amount)
     # for messing with CSS - remove once fixed
     default_courses = [
-        'BT 353', 'CS 135', 'HHS 468', 'BT 181', 'CS 146', 'CS 284']
+        'CS 392', 'CS 496', 'CS 347', 'MA 222']
     resp = make_response(render_template(
         "schedule_entry.html", quantity=amount_of_courses, title='Scheduler', default_vals=default_courses))
     resp.set_cookie('course_amount', str(amount_of_courses), max_age=None)
