@@ -71,10 +71,9 @@ def app_secret():
 ```
 
 **Optional(but suggested):**Make a virtualenv for the project.
-'virtualenv venv'
-'pip install -r requirements.txt'
+`virtualenv venv`, `source venv/bin/activate`, then `pip install -r requirements.txt`.
 this should install everything you need with the right versions. A virtualenc also lets you use different versions than you have installed globally.
-'pip freeze' will printout the current pip installs
+`pip freeze` will printout the current pip installs
 
 Then you should be able to run it locally by going to the main directory and running `python run.py` and then pointing your browser to `127.0.0.1:5000`. The stylesheet is pulled from my server, but you can easily add your own or modify mine by making a new file and changing `templates/base.html` to use the new one.
 
