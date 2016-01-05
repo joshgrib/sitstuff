@@ -879,49 +879,53 @@ sg9
 Nsg10
 Nsg11
 (dp282
-sg13
+S'cs383.pdf'
+p283
+S'The Architecture of Computer Hardware, Systems Software, and Networking, Englander 4th Edition'
+p284
+ssg13
 Nsg14
 S'Three 1-hour lectures per week'
-p283
+p285
 sg16
 S'Computer Organization and Programming'
-p284
+p286
 sg18
 Nsg19
 S'Two theoretical and two assembly assignments'
-p285
+p287
 sba(icourse_class
 Course
-p286
-(dp287
+p288
+(dp289
 g3
 S'284'
-p288
+p290
 sg5
 Nsg6
 Nsg66
 S'One recitation per week, given a problem to solve during the recitation'
-p289
+p291
 sg7
 S'CS'
-p290
+p292
 sg9
 Nsg10
 Nsg11
-(dp291
+(dp293
 S'cs284.pdf'
-p292
+p294
 S'Data Structures: Abstraction and Design Using Java, Koffman 2nd Edition'
-p293
+p295
 ssg13
 Nsg14
 S'Three 1-hour lectures per week'
-p294
+p296
 sg16
 S'Data Structures'
-p295
+p297
 sg18
 Nsg19
 S'Around four assignments for the semester, usually making a class to represent a data structure'
-p296
+p298
 sba.

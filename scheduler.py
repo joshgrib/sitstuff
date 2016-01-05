@@ -276,5 +276,5 @@ def get_errors():
     return global_class_error_list
 
 if __name__ == '__main__':
-    schedule(['CS 182','CS 135','PEP 112','PEP 221','CAL 105','MA 222'])
-    print get_errors()
+    print schedule(['E 344', 'E 126', 'E 245', 'E 231', 'MA 227', 'HST 120'])
+    #print get_errors()
