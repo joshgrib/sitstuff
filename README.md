@@ -70,15 +70,11 @@ def app_secret():
     return "Some_secret_thing_for_the_app"
 ```
 
-**Optional(but suggested):**Make a virtualenv for the project, then `pip install Flask`. After that `pip freeze` should be something like:
-```
-Flask==0.10.1
-itsdangerous==0.24
-Jinja2==2.8
-MarkupSafe==0.23
-Werkzeug==0.10.4
-```
-and then you don't have to worry about changing versions or whatever, and you won't mess up any other projects' dependencies that you might have on your machine. Just be sure you're in the virtual environment whenever you're running the app or stuff won't work.
+**Optional(but suggested):**Make a virtualenv for the project.
+'virtualenv venv'
+'pip install -r requirements.txt'
+this should install everything you need with the right versions. A virtualenc also lets you use different versions than you have installed globally.
+'pip freeze' will printout the current pip installs
 
 Then you should be able to run it locally by going to the main directory and running `python run.py` and then pointing your browser to `127.0.0.1:5000`. The stylesheet is pulled from my server, but you can easily add your own or modify mine by making a new file and changing `templates/base.html` to use the new one.
 
