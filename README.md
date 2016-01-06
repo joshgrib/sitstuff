@@ -75,6 +75,8 @@ def app_secret():
 this should install everything you need with the right versions. A virtualenc also lets you use different versions than you have installed globally.
 `pip freeze` will printout the current pip installs
 
+You can exit the virtualenv with `deactivate`
+
 Then you should be able to run it locally by going to the main directory and running `python run.py` and then pointing your browser to `127.0.0.1:5000`. The stylesheet is pulled from my server, but you can easily add your own or modify mine by making a new file and changing `templates/base.html` to use the new one.
 
-Mess around on your own, or add a feature and create a pull request.
+Mess around on your own, or add or fix something and create a pull request.
