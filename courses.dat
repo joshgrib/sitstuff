@@ -938,4 +938,33 @@ Nsg16
 S'Multivariable Calculus'
 p304
 sg18
+Nsba(icourse_class
+Course
+p305
+(dp306
+g3
+S'182'
+p307
+sg5
+Nsg6
+Nsg7
+S'CS'
+p308
+sg9
+Nsg10
+Nsg11
+(dp309
+S'cs182_2_2e.pdf'
+p310
+S'The C Programming Language, Kernighan & Ritchie 2nd edition'
+p311
+sS'cs182_1_3e.pdf'
+p312
+S'The Design and Analysis of Algorithms, Leviton 3rd edition'
+p313
+ssg13
+Nsg16
+S'Intro to Computer Science, Honors II'
+p314
+sg18
 Nsba.

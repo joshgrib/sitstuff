@@ -235,8 +235,7 @@ def admin_view_post():
             return resp
         elif str(request.form['action_choice']) == 'remove_co':
             courses = course_class.load_data()
-            courses = [item for item in courses if str(
-                item) != request.form['course_choice']]
+            courses = [item for item in courses if str(item) != request.form['course_choice']]
             course_class.save_data(courses)
             return render_template(
                 "index.html",

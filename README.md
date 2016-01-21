@@ -12,6 +12,9 @@ That's what inspired me to make a tool to see all possible schedules you could h
 ##Approach
 So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/), you can request the XML for any semester. I take the XML and a list of courses and pull out the info I need, and turn it into a big nested dictionary. Then I go through all the courses and sections, find all possible combinations, and check for conflicts. Any schedules with no conflicts are put into a new dictionary, and sent through flask to make the HTML to display for the user.
 
+##Hosting/tech
+I'm using [pythonanywhere](www.pythonanywhere.com) to host the site and handle the server stuff. That's where anything from this repo goes. Then I'm using [MacHighway](http://www.machighway.com/) to host the static, non-HTML files, mainly the stylesheet and any pdfs.
+
 ##Python libraries
 **flask** - the web framework that kinda runs everything
 
