@@ -638,300 +638,304 @@ p206
 sS'books'
 p207
 (dp208
-sg10
-Nsg11
-(dp209
-Vma222_8e.pdf
+S'ma222_8e.pdf'
+p209
+S'Probability and Statstics for Engineering and the Sciences - Devore 8th edition'
 p210
+ssg10
+Nsg11
+(dp211
+Vma222_8e.pdf
+p212
 VProbability and Statistics for Engineering and the Sciences - Devore 8th Edition
-p211
+p213
 ssg13
 Nsg16
 VProbability and Statistics for Engineers - "ProbStats"
-p212
+p214
 sg18
 Nsba(icourse_class
 Course
-p213
-(dp214
+p215
+(dp216
 g3
 V120
-p215
+p217
 sg5
 Nsg6
 Nsg24
 VFinal project - 3D Model with several parts, detail drawings for each, short in-class presentation
-p216
+p218
 sg7
 g8
 sg9
 Nsg10
 Nsg40
 V2 in-class quizzes
-p217
-sg11
-(dp218
-Ve120_4e.pdf
 p219
+sg11
+(dp220
+Ve120_4e.pdf
+p221
 VGraphics Communications for Engineers
-p220
+p222
 ssg13
 Nsg14
 V1 2-hour lecture per week
-p221
+p223
 sg16
 VGraphics
-p222
+p224
 sg18
 Nsg19
 V~1 model/week using SolidWorks to make engineering drawings
-p223
+p225
 sba(icourse_class
 Course
-p224
-(dp225
+p226
+(dp227
 g3
 V115
-p226
+p228
 sg5
 Nsg6
 Nsg58
 V1 recitation per week - go over topics from lecture, 10 minute quiz
-p227
+p229
 sg24
 V4 hour allotted time, generally takes 1-2.5 hour
-p228
+p230
 sg7
 VCH
-p229
+p231
 sg9
 Nsg10
 Nsg40
 V3 1-hour exams
-p230
-sg11
-(dp231
-Vch115_9e.pdf
 p232
+sg11
+(dp233
+Vch115_9e.pdf
+p234
 VZumdahl Chemistry 9th Edition
-p233
+p235
 ssg13
 Nsg14
 V2 1-hour lectures per week. Most people stop going after 3 weeks or so, obviously people that go more generally do better
-p234
+p236
 sg16
 VChemistry 1
-p235
+p237
 sg18
 Nsg19
 VMasteringPhysics - 1 online assignment/week
-p236
+p238
 sba(icourse_class
 Course
-p237
-(dp238
+p239
+(dp240
 g3
 V188
-p239
+p241
 sg5
 Nsg6
 Nsg24
 VYou need 5 points to pass the class for the semester
-p240
+p242
 sg7
 VMA
-p241
+p243
 sg9
 Nsg10
 Nsg40
 VSeveral quizzes to get additional points
-p242
+p244
 sg11
-(dp243
+(dp245
 sg13
 Nsg14
 VProfessor discusses concept in discrete mathematics and example problems
-p244
+p246
 sg16
 VSeminar in Math Sciences
-p245
+p247
 sg18
 Nsg19
 VProblems based on concepts from class, for correctly presenting the solution to the class you get 1 point
-p246
+p248
 sba(icourse_class
 Course
-p247
-(dp248
+p249
+(dp250
 g3
 S'334'
-p249
+p251
 sg5
 Nsg6
 Nsg7
 S'CS'
-p250
+p252
 sg9
 Nsg10
 Nsg11
-(dp251
+(dp253
 S'cs334.pdf'
-p252
+p254
 S'Introduction to the theory of Computation - Sipser 3rd Edition'
-p253
+p255
 ssg13
 Nsg16
 S'Computation and Autonoma'
-p254
+p256
 sg18
 Nsba(icourse_class
 Course
-p255
-(dp256
+p257
+(dp258
 g3
 S'334'
-p257
+p259
 sg5
 Nsg6
 Nsg7
 S'CS'
-p258
+p260
 sg9
 Nsg10
 Nsg11
-(dp259
+(dp261
 sg13
 Nsg14
 S'Three 1-hour lectures per week'
-p260
+p262
 sg16
 S'Automata and Computation'
-p261
+p263
 sg18
 Nsg19
 S'Weekly/bi-weekly homework assignments'
-p262
+p264
 sba(icourse_class
 Course
-p263
-(dp264
+p265
+(dp266
 g3
 S'503'
-p265
+p267
 sg5
 Nsg6
 Nsg7
 S'CS'
-p266
+p268
 sg9
 Nsg10
 Nsg11
-(dp267
+(dp269
 S'cs503.pdf'
-p268
+p270
 S'Handbook of Applied Cryptography'
-p269
+p271
 ssg13
 Nsg14
 S'One 2.5 hour lecture per week'
-p270
+p272
 sg16
 S'Discrete Math for Cryptography'
-p271
+p273
 sg18
 Nsg19
 S'Optional packet exercises'
-p272
+p274
 sba(icourse_class
 Course
-p273
-(dp274
+p275
+(dp276
 g3
 S'383'
-p275
+p277
 sg5
 Nsg6
 Nsg7
 S'CS'
-p276
+p278
 sg9
 Nsg10
 Nsg11
-(dp277
+(dp279
 S'cs383.pdf'
-p278
+p280
 S'The Architecture of Computer Hardware, Systems Software, and Networking, Englander 4th Edition'
-p279
+p281
 ssg13
 Nsg14
 S'Three 1-hour lectures per week'
-p280
+p282
 sg16
 S'Computer Organization and Programming'
-p281
+p283
 sg18
 Nsg19
 S'Two theoretical and two assembly assignments'
-p282
+p284
 sba(icourse_class
 Course
-p283
-(dp284
+p285
+(dp286
 g3
 S'284'
-p285
+p287
 sg5
 Nsg6
 Nsg58
 S'One recitation per week, given a problem to solve during the recitation'
-p286
+p288
 sg7
 S'CS'
-p287
+p289
 sg9
 Nsg10
 Nsg11
-(dp288
+(dp290
 S'cs284.pdf'
-p289
+p291
 S'Data Structures: Abstraction and Design Using Java, Koffman 2nd Edition'
-p290
+p292
 ssg13
 Nsg14
 S'Three 1-hour lectures per week'
-p291
+p293
 sg16
 S'Data Structures'
-p292
+p294
 sg18
 Nsg19
 S'Around four assignments for the semester, usually making a class to represent a data structure'
-p293
+p295
 sba(icourse_class
 Course
-p294
-(dp295
+p296
+(dp297
 g3
 S'227'
-p296
+p298
 sg5
 Nsg9
 Nsg6
 Nsg7
 S'MA'
-p297
-sg207
-(dp298
-S'ma227_4e.pdf'
 p299
+sg207
+(dp300
+S'ma227_4e.pdf'
+p301
 S'Stewart Calculus Concepts and Context, 4th edition'
-p300
+p302
 ssg10
 Nsg11
-(dp301
+(dp303
 sg13
 Nsg16
 S'Multivariable Calculus'
-p302
+p304
 sg18
 Nsba.
