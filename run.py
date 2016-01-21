@@ -201,7 +201,10 @@ def admin_view():
     for x in courses:
         course_list.append(x)
     course_list = sorted(course_list, key=lambda x: str(x))
+    """
+    No longder used because now I just edit locally, less to deal with
     sendMsg()  # sets global hash_code variable
+    """
     return render_template("admin_form.html", title='Admin', courses=course_list)
 
 
