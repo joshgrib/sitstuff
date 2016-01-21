@@ -4,6 +4,8 @@ Class to represent courses for the course info page on sitstuff
 import os
 import pickle
 
+def file_name():
+    return 'courses.dat'
 
 def remove_spaces(my_str):
     """Remove the spaces from the end of a string"""
@@ -18,7 +20,7 @@ def remove_spaces(my_str):
 def load_data():
     """Loads the data from .dat file... get it? dat file? No? Okay..."""
     my_dir = os.path.dirname(__file__)
-    file_path = os.path.join(my_dir, 'courses.dat')
+    file_path = os.path.join(my_dir, file_name() )
     try:
         with open(file_path) as f:
             data = pickle.load(f)
@@ -30,7 +32,7 @@ def load_data():
 def save_data(data):
     """Saves the data to the .dat file"""
     my_dir = os.path.dirname(__file__)
-    file_path = os.path.join(my_dir, 'courses.dat')
+    file_path = os.path.join(my_dir, file_name() )
     with open(file_path, "wb") as f:
         pickle.dump(data, f)
 
