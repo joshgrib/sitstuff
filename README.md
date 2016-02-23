@@ -4,6 +4,8 @@
 
 This is a website I made to be a resource for the students of Stevens Institute of Technology
 
+###Future plan: Use topological search to make a study plan creator! Given a list of courses, possibly gotten from parsing one of the pages at [the school website](http://stevens.edu), it would supply one or possibly more study plans, taking into account prereqs and coreqs.
+
 ##Background
 So at Stevens the only way to reasonably figure out your schedule for future semesters is to use the course scheduler available [here](https://web.stevens.edu/scheduler/). You can search for classes and see different offerings, and work out a schedule that suits you best.To figure out your schedule you basically just need to use trial and error until you create one that works and you're relatively happy with. I want to make it so that you can enter the courses you need to take, and all possible schedules will be generated.
 

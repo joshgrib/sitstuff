@@ -24,6 +24,9 @@ app.secret_key = secrets.app_secret()
 @app.route('/')
 @app.route('/index')
 def index():
+    """
+    Returns the home page
+    """
     visited = request.cookies.get('visited')
     if visited == 'True':
         resp = make_response(
@@ -89,6 +92,9 @@ def how_many():
 
 @app.route('/how_many', methods=['GET', 'POST'])
 def how_many_post():
+    """
+    Asks the user how many courses they want to schedule
+    """
     course_amount = request.form['course_amount']
     amount_of_courses = int(course_amount)
     # for messing with CSS - remove once fixed

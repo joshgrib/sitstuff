@@ -2,27 +2,46 @@ import course_class
 import os
 import json
 
+def add_course(dept, number, name):
+    """Add a new course to the list of courses"""
+    courses = course_class.load_data()
+    #add new course
+    new = course_class.Course(dept, number, name)
+    courses = courses + [new]
+    course_class.save_data(courses)
+
+def add_book(course_n, url, title):
+    """Usage: add_book("MA222", "ma222_8e.pdf", "Book Name, 3rd edition")"""
+    courses = course_class.load_data()
+    for course in courses:
+        print course, "\n", course.books, "\n"
+        if str(course)[:len(course_n)] == course_n:
+            print "Found it!!!!!!!!!!!!!!!!"
+            course.books[url] = title
+            print "added book"
+            print "---\n"
+    course_class.save_data(courses)
+
+def rem_course(course_n):
+    courses = course_class.load_data()
+    count = 0
+    for course in courses:
+        if str(course)[:len(course_n)] == course_n:
+            if(count<2):
+                print "Found one!"
+                courses.remove(course)
+                count += 1
+    course_class.save_data(courses)
+
 if __name__ == "__main__":
-#    new_d = course_class.load_data()
-#    for course in new_d:
-#        print course.getHTML()
+    print "------------------Starting------------------"
+    #add_course("PEP", "201", "Physics II for Engineering Students")
+    #add_book("PEP201", "pep111_3e.pdf", "Physics for Scientists and Engineers, Knight 3rd Edition")
+    #rem_course("PEP201")
+    print "--------------------Done--------------------"
 
-    new_url = "ma222_8e.pdf"
-    new_name = "Probability and Statstics for Engineering and the Sciences - Devore 8th edition"
-    course_to_find = "MA222"
 
-    def add_book(course, url, title):
-        courses = course_class.load_data()
-        for course in courses:
-            print course, "\n", course.books, "\n"
-            if str(course)[:5] == course_to_find:
-                print "Found it!!!!!!!!!!!!!!!!"
-                course.books[new_url] = new_name
-                print "added book"
-                print "---\n"
-        course_class.save_data(courses)\
 
-    #add_book(course_to_find, new_url, new_name)
 
     '''
     #get sorted course list
