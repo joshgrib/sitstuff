@@ -176,7 +176,9 @@ class Course:
         if (self.books != {}):
             other_stuff = '<fieldset><legend> Books and required stuff </legend>'
             for book in self.books:
-                #other_stuff = other_stuff + '<a href="http://sitstuff.com/book/' + book + '" target="_blank">' + self.books[book] + '</a><br>'
+                """Below edited out so the books don't show up for a bit"""
+                #other_stuff = other_stuff + '<a href="http://sitstuff.com/book/' + \
+                #    book + '" target="_blank">' + self.books[book] + '</a><br />'
                 other_stuff = other_stuff + self.books[book] + "<br />"
             other_stuff = other_stuff + '</fieldset>'
         else:

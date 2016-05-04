@@ -2,6 +2,7 @@
 {% block content %}
     <h3>Enter {{ quantity }} courses to schedule</h3>
     <p style="color:red">Known problem courses: PEP 112, CS 135 </p>
+    <p style="color:red">Also, if you get a 502 error it's probably because you have too many schedules. For example E245, E243, ME 234, E 321, and E344 have 1259 possible schedules, which is a lot for the small server to figure out and send across the web.</p>
     <b><u>BE SURE</u> to put a space between the letters and the numbers, or else it wont get scheduled. Ex: CS 115, not CS115.<br>
     You don't need to add recitation, labs, or lectures seperately, it does that for you.</b>
     <form action="/schedules" method="POST">
