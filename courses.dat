@@ -43,78 +43,80 @@ Course
 p21
 (dp22
 g3
-Vnown
+V121
 p23
 sg5
 Nsg6
-Nsg7
-VUNK
+NsS'final'
 p24
+VFinal project - about 10 weeks of class time. Design, build, and code a robot to autonomously navigating and complete simple tasks using the Arduino programming language. Large written report. Short in-class presentation
+p25
+sg7
+g8
 sg9
 Nsg10
 Nsg11
-(dp25
-VStewartCalculusConceptsandContexts4th.pdf
-p26
-VStewart Calculus Concepts and Contexts - 4th Edition
+(dp26
+sg13
+Nsg14
+V1 3-hour lecture per week
 p27
-ssg13
-Nsg16
-S''
+sg16
+VEngineering Design 1 - "D1"
 p28
 sg18
-Nsba(icourse_class
-Course
+Nsg19
+VShort readings the first few weeks, then the written report at the end
 p29
-(dp30
+sba(icourse_class
+Course
+p30
+(dp31
 g3
-V121
-p31
+V183
+p32
 sg5
 Nsg6
-NsS'final'
-p32
-VFinal project - about 10 weeks of class time. Design, build, and code a robot to autonomously navigating and complete simple tasks using the Arduino programming language. Large written report. Short in-class presentation
+Nsg7
+VH
 p33
-sg7
-g8
 sg9
 Nsg10
 Nsg11
 (dp34
 sg13
 Nsg14
-V1 3-hour lecture per week
+VDifferent professors come and present the research they have done
 p35
 sg16
-VEngineering Design 1 - "D1"
+VResearch Seminar I
 p36
 sg18
-Nsg19
-VShort readings the first few weeks, then the written report at the end
-p37
-sba(icourse_class
+Nsba(icourse_class
 Course
-p38
-(dp39
+p37
+(dp38
 g3
-V183
-p40
+V184
+p39
 sg5
 Nsg6
 Nsg7
-VH
-p41
+g33
 sg9
 Nsg10
-Nsg11
+NsS'exams'
+p40
+VOne question about what your plan for the summer is
+p41
+sg11
 (dp42
 sg13
 Nsg14
-VDifferent professors come and present the research they have done
+VUsually they tour the labs, but there were so many students for Spring 2015 that the removed the lecture section
 p43
 sg16
-VResearch Seminar I
+VResearch Seminar II
 p44
 sg18
 Nsba(icourse_class
@@ -122,806 +124,872 @@ Course
 p45
 (dp46
 g3
-V184
+V245
 p47
 sg5
 Nsg6
 Nsg7
-g41
-sg9
-Nsg10
-NsS'exams'
-p48
-VOne question about what your plan for the summer is
-p49
-sg11
-(dp50
-sg13
-Nsg14
-VUsually they tour the labs, but there were so many students for Spring 2015 that the removed the lecture section
-p51
-sg16
-VResearch Seminar II
-p52
-sg18
-Nsba(icourse_class
-Course
-p53
-(dp54
-g3
-V245
-p55
-sg5
-Nsg6
-Nsg7
 g8
 sg9
 Nsg10
-Nsg48
+Nsg40
 VSeveral exams throughout the year.
-p56
+p48
 sg11
-(dp57
+(dp49
 Ve245_6e.pdf
-p58
+p50
 VElectrical Engineering Principles and Applications - Sixth Edition
-p59
+p51
 ssg13
 Nsg14
 VKevin Ryan + his power point slides a few times a week.
-p60
+p52
 sg16
 VCircuits and Systems
-p61
+p53
 sg18
 Nsg19
 VA few problems from the book due every two weeks or so. There is also sometimes "problem of the week" that is a harder problem that you have a week or two to do. Every homework has a cover page and they are on canvas along with all slides.
-p62
+p54
 sba(icourse_class
 Course
-p63
-(dp64
+p55
+(dp56
 g3
 V115
-p65
+p57
 sg5
 Nsg6
 NsS'recitation'
-p66
+p58
 V1 1/2 hours once a week - turn in and go over homework. Attendence often not required if you finish homework and can submit it online
-p67
+p59
 sg7
 g8
 sg9
 Nsg10
-Nsg48
+Nsg40
 VOne midterm taken online and group collaboration is allowed and encouraged.
-p68
+p60
 sg11
-(dp69
+(dp61
 sg13
 Nsg14
 V1 hour once a week, usually finished early, the professor teaches you concepts and you program along with them
-p70
+p62
 sg16
 VIntroduction to Programming
-p71
+p63
 sg18
 Nsg19
 VMake a program to fit the criteria for the week
+p64
+sba(icourse_class
+Course
+p65
+(dp66
+g3
+V122
+p67
+sg5
+Nsg6
+Nsg24
+VProject and report
+p68
+sg7
+g8
+sg9
+Nsg10
+Nsg11
+(dp69
+sg13
+Nsg14
+V1 3-hour lecture per week
+p70
+sg16
+VEngineering Design 2 - "D2"
+p71
+sg18
+Nsg19
+VLabView(programming language) assignments he first few weeks
 p72
 sba(icourse_class
 Course
 p73
 (dp74
 g3
-V122
+V105
 p75
 sg5
 Nsg6
-Nsg32
-VProject and report
-p76
-sg7
-g8
-sg9
-Nsg10
-Nsg11
-(dp77
-sg13
-Nsg14
-V1 3-hour lecture per week
-p78
-sg16
-VEngineering Design 2 - "D2"
-p79
-sg18
-Nsg19
-VLabView(programming language) assignments he first few weeks
-p80
-sba(icourse_class
-Course
-p81
-(dp82
-g3
-V105
-p83
-sg5
-Nsg6
-Nsg66
+Nsg58
 VN/A
-p84
-sg32
+p76
+sg24
 VTime and format varies greatly by professor. Anything from several short questions to an essays
-p85
+p77
 sg7
 VCAL
-p86
+p78
 sg9
 Nsg10
-Nsg48
+Nsg40
 V1 midterm with length varying greatly by professor
-p87
+p79
 sg11
-(dp88
+(dp80
 sg13
 Nsg14
 V3 hours a week, either as a 2-hour and a 1-hour session or as 3 1-hour sessions. Varies by professor, usually a discussion-based lecture
-p89
+p81
 sg16
 VKnowledge, Nature, and Culture
-p90
+p82
 sg18
 Nsg19
 VVaries by professor but generally 3 essays, and 1-2 readings per week with short writing assignments for each
-p91
+p83
 sba(icourse_class
 Course
-p92
-(dp93
+p84
+(dp85
 g3
 V121-
-p94
+p86
 sg5
 Nsg6
-Nsg66
+Nsg58
 V1 "workshop" per week - do a worksheet in class, ask TA questions, get homework worksheet. 1 recitation per week - hand in homework worksheet, review of lecture concepts
-p95
-sg32
+p87
+sg24
 V4-hours allotted time, generally takes 1.5-2.5 hours
-p96
+p88
 sg7
 VMA
-p97
+p89
 sg9
 Nsg10
-Nsg48
+Nsg40
 V3 1-hour exams, with fraternity-led and school-led reviews before
-p98
+p90
 sg11
-(dp99
+(dp91
 Vma121-124_6e.pdf
-p100
+p92
 VHughes-Hallett Calculus 6th Edition
-p101
+p93
 ssg13
 Nsg14
 V2 1-hour lectures per week
-p102
+p94
 sg16
 V- Calc 1 & Calc 2
-p103
+p95
 sg18
 Nsg19
 VWorksheet - 1 per week - generally two problems. WileyPlus - 1 assignment/week, generally 12-15 questions, and a review before each exam, about the same length. Canvas - 1 quiz before every lecture, 2 or 3 multiple choice questions. Gradarius(Only for Calc 1) - 1 assignment per week, typically 4 questions, where you show your work online
-p104
+p96
 sba(icourse_class
 Course
-p105
-(dp106
+p97
+(dp98
 g3
 V101
-p107
+p99
 sg5
 Nsg6
 Nsg7
 VQF
-p108
+p100
 sg9
 Nsg10
-Nsg48
+Nsg40
 V2-3 exams per semester
-p109
+p101
 sg11
-(dp110
+(dp102
 sg13
 Nsg14
 VOne 2-hour and one 1-hour lecture per week. Starts with a quiz on the WSJ, then powerpoints and videos
-p111
+p103
 sg16
-g28
+S''
+p104
 sg18
 Nsg19
 VRead Wall Street Journal sections and the professors blog articles before each lecture. 2-3 projects/semester. 1 group portfolio managed throughout the semester
-p112
+p105
 sba(icourse_class
 Course
-p113
-(dp114
+p106
+(dp107
 g3
 V117
-p115
+p108
 sg5
 Nsg6
-Nsg32
+Nsg24
 VVideo of one of the labs
-p116
+p109
 sg7
 VCH
-p117
+p110
 sg9
 Nsg10
-Nsg48
+Nsg40
 VQuizzes at the beginning of each lab
-p118
+p111
 sg11
-(dp119
+(dp112
 Vch117_10e.pdf
-p120
+p113
 VChemistry Lab Manual - This book has all the lab forms and info in it. You need to print them out before every lab, they should also all be available on Canvas
-p121
+p114
 ssg13
 Nsg14
 V1 Lab per week, usually about one hour of the three hour time allotment
-p122
+p115
 sg16
 VChemistry Lab
-p123
+p116
 sg18
 Nsg19
 VFinishing lab reports
-p124
+p117
 sba(icourse_class
 Course
-p125
-(dp126
+p118
+(dp119
 g3
 V103
-p127
+p120
 sg5
 Nsg6
 Nsg7
 VMGT
-p128
+p121
 sg9
 Nsg10
 Nsg11
-(dp129
+(dp122
 Vmgt103_2e.pdf
-p130
+p123
 VRunning Lean 2nd Edition
-p131
+p124
 ssg13
 Nsg16
 VIntroduction to Entrepreneurial Thinking - "Intro to Entro"
-p132
+p125
 sg18
 Nsba(icourse_class
 Course
-p133
-(dp134
+p126
+(dp127
 g3
 V221
-p135
+p128
 sg5
 Nsg6
-Nsg66
+Nsg58
 V2 recitations per week - review of lecture topics and practice problems, hand in homework
-p136
-sg32
+p129
+sg24
 VI havent had the final yet
-p137
+p130
 sg7
 VMA
-p138
+p131
 sg9
 Nsg10
-Nsg48
+Nsg40
 VExam 1 - 4 problems for 25pts each - you pretty much just need to know 4 equations and then you will do fine
-p139
+p132
 sg11
-(dp140
-Vma221_8e.pdf
-p141
+(dp133
+Vma221_6e.pdf
+p134
 VFundamental Differential Equations & Boundary Value Problems - Nagle 6th Edition
-p142
+p135
 ssg13
 Nsg14
 V2 1-hour lectures per week
-p143
+p136
 sg16
 VDifferential Equations - "DifEq"
-p144
+p137
 sg18
 Nsg19
 V2 written homeworks/week - generally 6-10 problems
-p145
+p138
 sba(icourse_class
 Course
-p146
-(dp147
+p139
+(dp140
 g3
 V135
-p148
+p141
 sg5
 Nsg6
 Nsg7
 VCS
-p149
+p142
 sg9
 Nsg10
 Nsg11
-(dp150
+(dp143
 Vcs135_7e.pdf
-p151
+p144
 VDiscrete Mathematics and Its Applications - McGraw Hill 7th FEdition
-p152
+p145
 sVcs135_S_4e.pdf
-p153
+p146
 VThe Little Schemer - 4th Edition
-p154
+p147
 ssg13
 Nsg16
 VDiscrete Structures
-p155
+p148
 sg18
 Nsba(icourse_class
 Course
-p156
-(dp157
+p149
+(dp150
 g3
 V281
-p158
+p151
 sg5
 Nsg6
-Nsg66
+Nsg58
 VOnce a week. You must know the answers to a set of questions you are given on canvas beforehand and you may be asked to go to the board and answer them
-p159
-sg32
+p152
+sg24
 V4-hours allotted time, 25 percent of final grade
-p160
+p153
 sg7
 VCH
-p161
+p154
 sg9
 Nsg10
-Nsg48
+Nsg40
 V3 1-hour exams, 15 percent of final grade each
-p162
+p155
 sg11
-(dp163
+(dp156
 sg13
 Nsg14
 VTwice a week
-p164
+p157
 sg16
 VBiology
-p165
+p158
 sg18
 Nsg19
 VCanvas- Questions you need to know for recitation(1/week) are online on the calendar. You must know the answers to the questions for each recitation, and you must uplaod a picture of your answers to all questions to canvas before the exam on those chapters. Mintap/Aplia- Tutorial Quiz and Aplia assignment for each chapter must be completed by the due dates posted
-p166
+p159
 sba(icourse_class
 Course
-p167
-(dp168
+p160
+(dp161
 g3
 V111
-p169
+p162
 sg5
 Nsg6
-Nsg66
+Nsg58
 V1 2-hour recitation per week - review of lecture topics and practice problems
-p170
-sg32
+p163
+sg24
 VI havent had the final yet
-p171
+p164
 sg7
 VPEP
-p172
+p165
 sg9
 Nsg10
-Nsg48
+Nsg40
 V15 point quizzes every two weeks, you get to drop the lowest grade
-p173
+p166
 sg11
-(dp174
-Vpep111_3e.pdf
-p175
-VPhysics - Knight 3rd Edition
-p176
+(dp167
+Vpep111_9e.pdf
+p168
+VPhysics for Scientists and Engineers with Modern Physics, Serway&Jewett 9th edition
+p169
 ssg13
 Nsg14
 V2 1-hour lectures per week
-p177
+p170
 sg16
 VMechanics
-p178
+p171
 sg18
 Nsg19
 VMasteringPhysics - 1 online assignment/week. Im not going to say there is a javascript code that will give you all the answers... but Im not saying there isnt
-p179
+p172
 sba(icourse_class
 Course
-p180
-(dp181
+p173
+(dp174
 g3
 V188
-p182
+p175
 sg5
 Nsg6
 Nsg7
 VCS
-p183
+p176
 sg9
 Nsg10
 Nsg11
-(dp184
+(dp177
 sg13
 Nsg14
 VStudents present on controversial/interesting technology
-p185
+p178
 sg16
 VSeminar in Computer Science
-p186
+p179
 sg18
 Nsg19
 VPrepare your presentation for the class
-p187
+p180
 sba(icourse_class
 Course
-p188
-(dp189
+p181
+(dp182
 g3
 V103
-p190
+p183
 sg5
 Nsg6
-Nsg66
+Nsg58
 VN/A
-p191
-sg32
+p184
+sg24
 VTime and format varies greatly by professor. Anything from several short questions to several essays
-p192
+p185
 sg7
 VCAL
-p193
+p186
 sg9
 Nsg10
-Nsg48
+Nsg40
 V1 midterm with length varying greatly by professor
-p194
+p187
 sg11
-(dp195
+(dp188
 Vcal103_a.pdf
-p196
+p189
 VA World of Ideas
-p197
+p190
 sVcal103_hacker_6e.pdf
-p198
+p191
 VA Pocket Style Manual - Diana Hacker
-p199
+p192
 ssg13
 Nsg14
 V3 hours a week, either as a 2-hour and a 1-hour session or as 3 1-hour sessions. Varies by professor, usually a discussion-based lecture
-p200
+p193
 sg16
 VWriting and Communications
-p201
+p194
 sg18
 Nsg19
 VVaries greatly by professor but generally 3 essays, 1 being a research paper, and 1-2 readings per week with short writing assignments for each
-p202
+p195
 sba(icourse_class
+Course
+p196
+(dp197
+g3
+V126
+p198
+sg5
+Nsg6
+Nsg7
+g8
+sg9
+Nsg10
+Nsg11
+(dp199
+Ve126_4e.pdf
+p200
+VStatics and Mechanics of Materials - Hibbeler 4th Edition
+p201
+ssg13
+Nsg16
+VMechanics of Solids - "Mech Solids"
+p202
+sg18
+Nsba(icourse_class
 Course
 p203
 (dp204
 g3
-V126
+V222
 p205
 sg5
-Nsg6
-Nsg7
-g8
-sg9
-Nsg10
-Nsg11
-(dp206
-Ve126_4e.pdf
-p207
-VStatics and Mechanics of Materials - Hibbeler 4th Edition
-p208
-ssg13
-Nsg16
-VMechanics of Solids - "Mech Solids"
-p209
-sg18
-Nsba(icourse_class
-Course
-p210
-(dp211
-g3
-V222
-p212
-sg5
+Nsg9
 Nsg6
 Nsg7
 VMA
-p213
-sg9
-Nsg10
+p206
+sS'books'
+p207
+(dp208
+S'ma222_8e.pdf'
+p209
+S'Probability and Statstics for Engineering and the Sciences - Devore 8th edition'
+p210
+ssg10
 Nsg11
-(dp214
+(dp211
 Vma222_8e.pdf
-p215
+p212
 VProbability and Statistics for Engineering and the Sciences - Devore 8th Edition
-p216
+p213
 ssg13
 Nsg16
 VProbability and Statistics for Engineers - "ProbStats"
-p217
+p214
 sg18
 Nsba(icourse_class
 Course
-p218
-(dp219
+p215
+(dp216
 g3
 V120
-p220
+p217
 sg5
 Nsg6
-Nsg32
+Nsg24
 VFinal project - 3D Model with several parts, detail drawings for each, short in-class presentation
-p221
+p218
 sg7
 g8
 sg9
 Nsg10
-Nsg48
+Nsg40
 V2 in-class quizzes
-p222
+p219
 sg11
-(dp223
+(dp220
 Ve120_4e.pdf
-p224
+p221
 VGraphics Communications for Engineers
-p225
+p222
 ssg13
 Nsg14
 V1 2-hour lecture per week
-p226
+p223
 sg16
 VGraphics
-p227
+p224
 sg18
 Nsg19
 V~1 model/week using SolidWorks to make engineering drawings
-p228
+p225
 sba(icourse_class
 Course
-p229
-(dp230
+p226
+(dp227
 g3
 V115
-p231
+p228
 sg5
 Nsg6
-Nsg66
+Nsg58
 V1 recitation per week - go over topics from lecture, 10 minute quiz
-p232
-sg32
+p229
+sg24
 V4 hour allotted time, generally takes 1-2.5 hour
-p233
+p230
 sg7
 VCH
-p234
+p231
 sg9
 Nsg10
-Nsg48
+Nsg40
 V3 1-hour exams
-p235
+p232
 sg11
-(dp236
+(dp233
 Vch115_9e.pdf
-p237
+p234
 VZumdahl Chemistry 9th Edition
-p238
+p235
 ssg13
 Nsg14
 V2 1-hour lectures per week. Most people stop going after 3 weeks or so, obviously people that go more generally do better
-p239
+p236
 sg16
 VChemistry 1
-p240
+p237
 sg18
 Nsg19
 VMasteringPhysics - 1 online assignment/week
-p241
+p238
 sba(icourse_class
 Course
-p242
-(dp243
+p239
+(dp240
 g3
 V188
-p244
+p241
 sg5
 Nsg6
-Nsg32
+Nsg24
 VYou need 5 points to pass the class for the semester
-p245
+p242
 sg7
 VMA
-p246
+p243
 sg9
 Nsg10
-Nsg48
+Nsg40
 VSeveral quizzes to get additional points
-p247
+p244
 sg11
-(dp248
+(dp245
 sg13
 Nsg14
 VProfessor discusses concept in discrete mathematics and example problems
-p249
+p246
 sg16
 VSeminar in Math Sciences
-p250
+p247
 sg18
 Nsg19
 VProblems based on concepts from class, for correctly presenting the solution to the class you get 1 point
-p251
+p248
 sba(icourse_class
 Course
-p252
-(dp253
+p249
+(dp250
 g3
 S'334'
-p254
+p251
 sg5
 Nsg6
 Nsg7
 S'CS'
-p255
+p252
 sg9
 Nsg10
 Nsg11
-(dp256
+(dp253
 S'cs334.pdf'
-p257
+p254
 S'Introduction to the theory of Computation - Sipser 3rd Edition'
-p258
+p255
 ssg13
 Nsg16
 S'Computation and Autonoma'
-p259
+p256
 sg18
 Nsba(icourse_class
 Course
-p260
-(dp261
+p257
+(dp258
 g3
 S'334'
-p262
+p259
 sg5
 Nsg6
 Nsg7
 S'CS'
-p263
+p260
 sg9
 Nsg10
 Nsg11
-(dp264
+(dp261
 sg13
 Nsg14
 S'Three 1-hour lectures per week'
-p265
+p262
 sg16
 S'Automata and Computation'
-p266
+p263
 sg18
 Nsg19
 S'Weekly/bi-weekly homework assignments'
-p267
+p264
 sba(icourse_class
 Course
-p268
-(dp269
+p265
+(dp266
 g3
 S'503'
-p270
+p267
 sg5
 Nsg6
 Nsg7
 S'CS'
-p271
+p268
 sg9
 Nsg10
 Nsg11
-(dp272
+(dp269
 S'cs503.pdf'
-p273
+p270
 S'Handbook of Applied Cryptography'
-p274
+p271
 ssg13
 Nsg14
 S'One 2.5 hour lecture per week'
-p275
+p272
 sg16
 S'Discrete Math for Cryptography'
-p276
+p273
 sg18
 Nsg19
 S'Optional packet exercises'
-p277
+p274
 sba(icourse_class
 Course
-p278
-(dp279
+p275
+(dp276
 g3
 S'383'
-p280
+p277
 sg5
 Nsg6
 Nsg7
 S'CS'
+p278
+sg9
+Nsg10
+Nsg11
+(dp279
+S'cs383.pdf'
+p280
+S'The Architecture of Computer Hardware, Systems Software, and Networking, Englander 4th Edition'
 p281
-sg9
-Nsg10
-Nsg11
-(dp282
-sg13
-Nsg14
-S'Three 1-hour lectures per week'
-p283
-sg16
-S'Computer Organization and Programming'
-p284
-sg18
-Nsg19
-S'Two theoretical and two assembly assignments'
-p285
-sba(icourse_class
-Course
-p286
-(dp287
-g3
-S'284'
-p288
-sg5
-Nsg6
-Nsg66
-S'One recitation per week, given a problem to solve during the recitation'
-p289
-sg7
-S'CS'
-p290
-sg9
-Nsg10
-Nsg11
-(dp291
-S'cs284.pdf'
-p292
-S'Data Structures: Abstraction and Design Using Java, Koffman 2nd Edition'
-p293
 ssg13
 Nsg14
 S'Three 1-hour lectures per week'
-p294
+p282
+sg16
+S'Computer Organization and Programming'
+p283
+sg18
+Nsg19
+S'Two theoretical and two assembly assignments'
+p284
+sba(icourse_class
+Course
+p285
+(dp286
+g3
+S'284'
+p287
+sg5
+Nsg6
+Nsg58
+S'One recitation per week, given a problem to solve during the recitation'
+p288
+sg7
+S'CS'
+p289
+sg9
+Nsg10
+Nsg11
+(dp290
+S'cs284.pdf'
+p291
+S'Data Structures: Abstraction and Design Using Java, Koffman 2nd Edition'
+p292
+ssg13
+Nsg14
+S'Three 1-hour lectures per week'
+p293
 sg16
 S'Data Structures'
-p295
+p294
 sg18
 Nsg19
 S'Around four assignments for the semester, usually making a class to represent a data structure'
+p295
+sba(icourse_class
+Course
 p296
-sba.
+(dp297
+g3
+S'227'
+p298
+sg5
+Nsg9
+Nsg6
+Nsg7
+S'MA'
+p299
+sg207
+(dp300
+S'ma227_4e.pdf'
+p301
+S'Stewart Calculus Concepts and Context, 4th edition'
+p302
+ssg10
+Nsg11
+(dp303
+sg13
+Nsg16
+S'Multivariable Calculus'
+p304
+sg18
+Nsba(icourse_class
+Course
+p305
+(dp306
+g3
+S'182'
+p307
+sg5
+Nsg6
+Nsg7
+S'CS'
+p308
+sg9
+Nsg10
+Nsg11
+(dp309
+S'cs182_2_2e.pdf'
+p310
+S'The C Programming Language, Kernighan & Ritchie 2nd edition'
+p311
+sS'cs182_1_3e.pdf'
+p312
+S'The Design and Analysis of Algorithms, Leviton 3rd edition'
+p313
+ssg13
+Nsg16
+S'Intro to Computer Science, Honors II'
+p314
+sg18
+Nsba(icourse_class
+Course
+p315
+(dp316
+g3
+S'201'
+p317
+sg5
+Nsg6
+Nsg7
+S'PEP'
+p318
+sg9
+Nsg10
+Nsg11
+(dp319
+S'pep111_3e.pdf'
+p320
+S'Physics for Scientists and Engineers, Knight 3rd Edition'
+p321
+ssg13
+Nsg16
+S'Physics II for Engineering Students'
+p322
+sg18
+Nsba.
