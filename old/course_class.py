@@ -19,6 +19,7 @@ def remove_spaces(my_str):
 
 def load_data():
     """Loads the data from .dat file... get it? dat file? No? Okay..."""
+    print "loading data"
     my_dir = os.path.dirname(__file__)
     file_path = os.path.join(my_dir, file_name() )
     try:
