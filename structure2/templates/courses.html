@@ -1,0 +1,20 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Courses</h2>
+
+    <b>If you can't find what you're looking for try <a href="http://sitstuff.com/book">here</a> or maybe <a href="http://sitstuff.com/tests" target="_blank">here</a></b>
+
+    <h4><b>Skip to letter:</b>
+    {% for letters in letter_links[:-1] %}
+        <a href="#{{ letters }}">{{ letters }}</a>-
+    {% endfor %}
+    <a href="#{{letter_links[-1]}}">{{ letter_links[-1] }}</a></h4>
+    Note: All the books here are just for my use and are not allowed to be used by anyone else. The links are so you can make sure you have the current version of the book, then you must buy your own copy to abide by copyright laws.<br>
+
+    {% for course in sorted_c %}
+        {{ course.getHTML()|safe }}
+    {% endfor %}
+
+{% endblock %}

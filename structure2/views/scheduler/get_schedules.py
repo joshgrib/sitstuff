@@ -253,7 +253,7 @@ def schedule(course_list):
      4: {'url': 'https://web.stevens.edu/scheduler/#2015F=10063,10486,10479,11840,12012,11995,10482,12166',
           'list': "('BT 181A', 'CS 284A', 'CS 135A', 'CS 135LB', 'BT 353D', 'HHS 468EV', 'CS 146B', 'CS 284RB')"}}
     """
-    url = 'https://web.stevens.edu/scheduler/core/2016S/2016F.xml'
+    url = 'https://web.stevens.edu/scheduler/core/2016F/2016F.xml'
     urllib.urlretrieve(url, 'courses.xml')
     tree = etree.parse('courses.xml')
     os.remove('courses.xml')

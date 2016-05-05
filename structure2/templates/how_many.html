@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>How many courses do you need to schedule?</h2>
+    <form action="/how_many" method="POST">
+        <input type="text" name="course_amount" value="6"><br>
+        <input type="submit" name="amount-form" value="Send">
+    </form>
+{% endblock %}
