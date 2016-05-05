@@ -1,5 +1,11 @@
+################################################
+#                     VIEWS                    #
+#     Used for displaying things to users      #
+#       Uses models to get stuff to show       #
+################################################
 from flask import Flask, render_template, request, make_response, redirect, session
 from src import app
+from models import course_class
 
 
 #######################

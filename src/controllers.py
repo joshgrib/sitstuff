@@ -1,7 +1,12 @@
+################################################
+#                  CONTROLLERS                 #
+#          Used for getting use input          #
+#           Uses models to get result          #
+################################################
 from flask import Flask, render_template, request, make_response, redirect, session
 from src import app
 from settings import PER_PAGE
-from models import scheduler, course_class
+from models import scheduler
 import json
 
 #######################
