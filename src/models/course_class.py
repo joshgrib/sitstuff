@@ -3,9 +3,8 @@ Class to represent courses for the course info page on sitstuff
 '''
 import os
 import pickle
-
-def file_name():
-    return 'courses.dat'
+from flask import render_template, make_response
+#from flask import render_template, make_response
 
 def remove_spaces(my_str):
     """Remove the spaces from the end of a string"""
@@ -16,6 +15,8 @@ def remove_spaces(my_str):
     else:
         return my_str
 
+def file_name():
+    return 'courses.dat'
 
 def load_data():
     """Loads the data from .dat file... get it? dat file? No? Okay..."""
@@ -24,10 +25,10 @@ def load_data():
     try:
         with open(file_path) as f:
             data = pickle.load(f)
-    except:
-        data = []
+    except IOError:
+        raise IOError("Could not open course data file supposedly at " + file_path)
+    #print "Getting data from " + file_path
     return data
-
 
 def save_data(data):
     """Saves the data to the .dat file"""
@@ -36,6 +37,21 @@ def save_data(data):
     with open(file_path, "wb") as f:
         pickle.dump(data, f)
 
+def get_courses_page():
+    courses = load_data()
+    # get sorted course list
+    sorted_courses = sorted(courses, key=lambda x: x.dept + x.num)
+    # get unique depts for links
+    course_letters = []
+    for course in sorted_courses:
+        if not course.dept in course_letters:
+            course_letters.append(course.dept)
+    resp = render_template('courses.html',
+                                             title='Courses',
+                                             courses=courses,
+                                             sorted_c=sorted_courses,
+                                             letter_links=course_letters)
+    return resp
 
 class Course:
 
@@ -208,10 +224,7 @@ class Course:
         return result
 
 if __name__ == '__main__':
-    data = load_data()
-    for course in data:
-        print course
-
+    print load_data()
 
 '''
     myC = Course('cs', '115', 'Intro to Computer Science')
