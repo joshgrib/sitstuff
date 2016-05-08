@@ -35,5 +35,5 @@ courses.append(['PEP', 111, 'Mechanics', None, None, None, None, None])
 courses.append(['PEP', 201, 'Physics 2 for Engineering Students', None, None, None, None, None])
 courses.append(['QF', 101, None, None, None, None, None, None])
 
-for course in courses:
-    print course
+for course in sorted(data):
+    print data[course]
