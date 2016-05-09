@@ -5,6 +5,7 @@
 ################################################
 from flask import Flask, render_template, request, make_response, redirect, session
 from src import app
+import dbtools
 
 
 #######################
@@ -38,8 +39,16 @@ def forbidden_error(error):
 #######################
 #     Course info     #
 #######################
-import course_class
+#import course_class
 
 @app.route('/courses')
 def courses():
-    return course_class.get_courses_page()
+    db = dbtools.CourseDB('course_info.db', 'courses')
+    courses = db.get_HTML()
+    depts = db.get_depts()
+    db.close_db()
+    resp = render_template('courses.html',
+                            title='Courses',
+                            courses=courses,
+                            letter_links=depts)
+    return resp
