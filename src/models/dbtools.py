@@ -144,7 +144,7 @@ class CourseDB:
             html += self.get_course_HTML(row)
         return html
     def get_depts(self):
-        query = "SELECT dept FROM {0}".format(self.__table)
+        query = "SELECT DISTINCT dept FROM {0}".format(self.__table)
         resp = []
         for result in self.ex_and_return(query):
             resp += result

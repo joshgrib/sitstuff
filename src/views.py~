@@ -43,7 +43,7 @@ def forbidden_error(error):
 
 @app.route('/courses')
 def courses():
-    db = dbtools.CourseDB('src/models/course_info.db', 'courses')
+    db = dbtools.CourseDB('models/course_info.db', 'courses')
     courses = db.get_HTML()
     depts = db.get_depts()
     db.close_db()

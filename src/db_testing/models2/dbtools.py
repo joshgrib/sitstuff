@@ -31,7 +31,11 @@ class CourseDB:
         self.__conn.commit()
     def ex_and_return(self, query):
         return self.__cursor.execute(query)
+    def open_db(self):
+        self.__conn = self.get_conn()
+        self.__cursor = self.get_cursor()
     def close_db(self):
+        self.__conn.commit()
         self.__conn.close()
     def create_table(self):
         """

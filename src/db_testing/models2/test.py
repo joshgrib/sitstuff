@@ -1,8 +1,8 @@
-from models2 import dbtools
+import dbtools
 
 if __name__ == '__main__':
     """Below: feature testing"""
-    db = dbtools.CourseDB('models2/course_info.db', 'courses')
+    db = dbtools.CourseDB('course_info.db', 'courses')
     courses = db.get_HTML()
     print courses
     depts = db.get_depts()
