@@ -62,12 +62,15 @@ import json
 PER_PAGE = 10
 AMOUNT_OF_COURSES = 10
 
-@app.route('/how_many')
+@app.route('/sched_entry')
 def how_many_post():
-    # for messing with CSS - remove once fixed
+    """
+    Goes to form with AMOUNT_OF_COURSES text boxes to input
+    courses to schedule, form action=/schedules, method=POST
+    """
     default_courses = ['CS 442', 'CS 392', 'CS 519', 'MA 331']
     resp = make_response(render_template(
-        "schedule_entry.html",
+        "sched_entry.html",
         quantity=AMOUNT_OF_COURSES,
         title='Scheduler',
         default_vals=default_courses))
@@ -76,23 +79,30 @@ def how_many_post():
 
 @app.route('/schedules', methods=['GET','POST'])
 def my_form_post():
+    """
+    Gets input from form, puts it in a list, gets the schedules,
+    send JSON of course combinations and send then to /sched as
+    a cookie
+    """
     text_list = []
+    #make list of form inputs
     for i in range(1, AMOUNT_OF_COURSES + 1):
         form_num = 'text' + str(i)
         text_list.append(request.form[form_num])
+    #remove items with no input, generate string of courses
     final_list = []
     for text in text_list:
         if not text == "":
             final_list.append(text)
-    course_list = ""
+    courses_str = ""
     for course in final_list[:-1]:
-        course_list += (str(course) + ',')
-    course_list += str(final_list[-1])
-    course_list = course_list.upper()
-    #my_url = '/sched'
-
-    real_course_list = course_list.split(',')
-    my_combos = scheduler.schedule(real_course_list)
+        courses_str += (str(course) + ',')
+    courses_str += str(final_list[-1])
+    courses_str = courses_str.upper()
+    #turn string of courses entered into list
+    c_list = courses_str.split(',')
+    #get the schedules
+    my_combos = scheduler.schedule(c_list)
     resp = make_response(redirect('/sched'))
     resp.set_cookie('course_combos', '', expires=0)
     resp.set_cookie('course_combos', json.dumps(my_combos))
@@ -120,18 +130,22 @@ def isLastPage(page_num, count_of_combos, per_page):
 @app.route('/sched/', defaults={'page': 1})
 @app.route('/sched/page/<int:page>')
 def scheduleMe(page):
-    deezCombos = json.loads(request.cookies.get('course_combos'))
-    count = len(deezCombos)
-    if count > PER_PAGE:
-        this_page_combos = getCombosForPage(page, PER_PAGE, count, deezCombos)
-    else:
-        this_page_combos = deezCombos
+    """
+    Display schedules as links and iframes
+    """
+    combos = json.loads(request.cookies.get('course_combos'))
+    count = len(combos)
+    pagination_needed = count > PER_PAGE
+    this_page_combos = combos
+    if pagination_needed:
+        this_page_combos = getCombosForPage(page, PER_PAGE, count, combos)
     last_page = isLastPage(page, count, PER_PAGE)
     if not this_page_combos and page != 1:
-        return '404 - Not that many schedules'
+        return render_template('404.html'), 404
     return render_template("sched.html",
                            title="Scheduler",
                            combos=this_page_combos,
                            combo_amount=str(count),
                            page=page,
-                           last_page=last_page)
+                           last_page=last_page,
+                           pagination=pagination_needed)

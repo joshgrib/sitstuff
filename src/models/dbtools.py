@@ -9,6 +9,9 @@ import sqlite3
 #DATABASE = 'course_info.db'
 #TABLE = 'courses'
 
+#class genericDB:
+
+
 class CourseDB:
     """
     A class for accessing a database name 'courses'

@@ -1,21 +1,23 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
 {% block content %}
-    <div class=pagination>
-    <h3>
-      {% if page != 1 %}
-        <a href="/sched/page/{{page - 1}} ">&laquo; Prev Page</a>
-      {% else %}
-        &laquo; Prev Page
-      {% endif %}
-      |||
-      {% if last_page %}
-        Next Page &raquo;
-      {% else %}
-        <a href="/sched/page/{{page + 1}}">Next Page &raquo;</a>
-      {% endif %}
-    </h3>
-    </div>
+    {% if pagination %}
+      <div class=pagination>
+        <h3>
+          {% if page != 1 %}
+            <a href="/sched/page/{{page - 1}} ">&laquo; Prev Page</a>
+          {% else %}
+            &laquo; Prev Page
+          {% endif %}
+          |||
+          {% if last_page %}
+            Next Page &raquo;
+          {% else %}
+            <a href="/sched/page/{{page + 1}}">Next Page &raquo;</a>
+          {% endif %}
+        </h3>
+      </div>
+    {% endif %}
 
     <h2>You have {{ combo_amount }} posssible schedules</h2>
     <!--
@@ -45,20 +47,22 @@
     <hr>
     {% endfor %}
 
-    <div class=pagination>
-    <h3>
-      {% if page != 1 %}
-        <a href="/sched/page/{{page - 1}} ">&laquo; Prev Page</a>
-      {% else %}
-        &laquo; Prev Page
-      {% endif %}
-      |||
-      {% if last_page %}
-        Next Page &raquo;
-      {% else %}
-        <a href="/sched/page/{{page + 1}}">Next Page &raquo;</a>
-      {% endif %}
-    </h3>
-    </div>
+    {% if pagination %}
+      <div class=pagination>
+        <h3>
+          {% if page != 1 %}
+            <a href="/sched/page/{{page - 1}} ">&laquo; Prev Page</a>
+          {% else %}
+            &laquo; Prev Page
+          {% endif %}
+          |||
+          {% if last_page %}
+            Next Page &raquo;
+          {% else %}
+            <a href="/sched/page/{{page + 1}}">Next Page &raquo;</a>
+          {% endif %}
+        </h3>
+      </div>
+    {% endif %}
 
 {% endblock %}
