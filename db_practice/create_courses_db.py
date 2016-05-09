@@ -1,19 +1,7 @@
 import sqlite3
 import dbtools
 
-conn, c = dbtools.get_cursor()
-
-#c.execute("""
-#    UPDATE courses
-#    SET lecture='',
-#        recitation='',
-#        homework='',
-#        exams='',
-#        final=''
-#    WHERE dept='' AND number=''
-#    """)
-
-#conn.commit()
+conn, c = dbtools.open_db('course_info.db')
 
 dbtools.print_courses(c)
 

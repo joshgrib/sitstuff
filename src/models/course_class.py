@@ -87,7 +87,7 @@ class Course:
         return self.__num
 
     @num.setter
-    def num(seld, local_num):
+    def num(self, local_num):
         if len(local_num) == 2:
             self.__num = remove_spaces(local_num)
         else:
