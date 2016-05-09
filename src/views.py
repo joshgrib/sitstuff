@@ -5,11 +5,11 @@
 ################################################
 from flask import Flask, render_template, request, make_response, redirect, session
 from src import app
-from models import dbtools
 
 
 #######################
 #    Static pages     #
+#     and errors      #
 #######################
 @app.route('/')
 @app.route('/index')
@@ -36,11 +36,11 @@ def not_found(error):
 def forbidden_error(error):
     return render_template('403.html'), 403
 
+
 #######################
 #     Course info     #
 #######################
-#import course_class
-
+from models import dbtools
 @app.route('/courses')
 def courses():
     db = dbtools.CourseDB('src/models/course_info.db', 'courses')
@@ -52,3 +52,86 @@ def courses():
                             courses=courses,
                             letter_links=depts)
     return resp
+
+
+#######################
+#     Scheduling      #
+#######################
+from models import scheduler
+import json
+PER_PAGE = 10
+AMOUNT_OF_COURSES = 10
+
+@app.route('/how_many')
+def how_many_post():
+    # for messing with CSS - remove once fixed
+    default_courses = ['CS 442', 'CS 392', 'CS 519', 'MA 331']
+    resp = make_response(render_template(
+        "schedule_entry.html",
+        quantity=AMOUNT_OF_COURSES,
+        title='Scheduler',
+        default_vals=default_courses))
+    resp.set_cookie('course_combos', '', expires=0)
+    return resp
+
+@app.route('/schedules', methods=['GET','POST'])
+def my_form_post():
+    text_list = []
+    for i in range(1, AMOUNT_OF_COURSES + 1):
+        form_num = 'text' + str(i)
+        text_list.append(request.form[form_num])
+    final_list = []
+    for text in text_list:
+        if not text == "":
+            final_list.append(text)
+    course_list = ""
+    for course in final_list[:-1]:
+        course_list += (str(course) + ',')
+    course_list += str(final_list[-1])
+    course_list = course_list.upper()
+    #my_url = '/sched'
+
+    real_course_list = course_list.split(',')
+    my_combos = scheduler.schedule(real_course_list)
+    resp = make_response(redirect('/sched'))
+    resp.set_cookie('course_combos', '', expires=0)
+    resp.set_cookie('course_combos', json.dumps(my_combos))
+    return resp
+
+def getCombosForPage(page_num, per_page, count_of_combos, combos):
+    """Returns the set of combos for the current page"""
+    combos_start = (per_page * (page_num - 1)) + 1
+    combos_end = combos_start + per_page
+    these_combos = {}
+    for key in range(combos_start, combos_end):
+        try:
+            # if new dict is not an int schedules are not sorted on the page
+            these_combos[key] = combos[str(key)]
+        except KeyError:
+            pass
+    return these_combos
+
+def isLastPage(page_num, count_of_combos, per_page):
+    """Return True if this is the last page in the pagination"""
+    if count_of_combos <= (page_num * per_page):
+        return True
+    return False
+
+@app.route('/sched/', defaults={'page': 1})
+@app.route('/sched/page/<int:page>')
+def scheduleMe(page):
+    deezCombos = json.loads(request.cookies.get('course_combos'))
+    count = len(deezCombos)
+    if count > PER_PAGE:
+        this_page_combos = getCombosForPage(page, PER_PAGE, count, deezCombos)
+    else:
+        this_page_combos = deezCombos
+    last_page = isLastPage(page, count, PER_PAGE)
+    if not this_page_combos and page != 1:
+        return '404 - Not that many schedules'
+    return render_template("sched.html",
+                           title="Scheduler",
+                           combos=this_page_combos,
+                           combo_amount=str(count),
+                           page=page,
+                           last_page=last_page)

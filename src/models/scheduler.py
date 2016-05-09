@@ -3,8 +3,23 @@ import os
 import xml.etree.ElementTree as etree
 import re
 import itertools
-from src.settings import SEMESTER
 
+def get_sem_list():
+    import requests
+    import re
+    url = 'http://web.stevens.edu/scheduler/core/'
+    order  = {'W':0, 'S':1, 'A':2, 'B':3, 'F':4}#custom alphabetic order
+    r = requests.get(url)
+    myre = re.compile(r'[0-9]{4}[A-Z]')#get things like '####A'
+    re_list =  myre.findall(r.text)
+    sem_list = sorted(
+        list(set(re_list)), #gets only unique values
+        #sort by year then term in custom alphabetic order
+        key=lambda semester: (semester[:4], order.get(semester[-1])),
+        reverse=True)#most recent first
+    return sem_list
+
+SEMESTER = get_sem_list()[0]
 
 def cleanupCourses(this_root, this_course_list):  # called from schedule()
     """Given the root of the xml tree and the course list, this will go through the XML and remove any course not in the list from the tree, then returns the revised root"""
@@ -83,7 +98,6 @@ def getCallNums(this_root):  # called from schedule()
         call_numbers[section_name] = call_num
     return call_numbers
 
-global_class_error_list = []
 def getBigDict(this_root):  # called from schedule()
     """Given the root of the xml tree, this will parse the xml and return a nested dictionary of courses, sections, and meeting times"""
     big_dict = {}
@@ -133,8 +147,9 @@ def getBigDict(this_root):  # called from schedule()
                         big_dict[course_big][course_section].append(
                             [letter, startTime, endTime])
             except KeyError:
-                global global_class_error_list
-                global_class_error_list.append(str(course.get('Section')))
+                pass
+                #global global_class_error_list
+                #global_class_error_list.append(str(course.get('Section')))
     return big_dict
 
 def isAllowed(classList1, classList2):  # called from checkCombination()
@@ -263,25 +278,6 @@ def schedule(course_list):
 
     return all_combos
 
-def get_errors():
-    global global_class_error_list
-    return global_class_error_list
-
-def get_sem_list():
-    import requests
-    import re
-    url = 'http://web.stevens.edu/scheduler/core/'
-    order  = {'W':0, 'S':1, 'A':2, 'B':3, 'F':4}#custom alphabetic order
-    r = requests.get(url)
-    myre = re.compile(r'[0-9]{4}[A-Z]')#get things like '####A'
-    re_list =  myre.findall(r.text)
-    sem_list = sorted(
-        list(set(re_list)), #gets only unique values
-        #sort by year then term in custom alphabetic order
-        key=lambda semester: (semester[:4], order.get(semester[-1])),
-        reverse=True)#most recent first
-    return sem_list
 
 if __name__ == '__main__':
-    print schedule(['E 344', 'E 126', 'E 245', 'E 231', 'MA 227', 'HST 120'])
-    #print get_errors()
+    print schedule(['CS 442', 'CS 392', 'CS 519', 'MA 331'])

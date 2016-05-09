@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
+    <!--
     <h3>Enter {{ quantity }} courses to schedule</h3>
     <p style="color:red">Known problem courses: PEP 112, CS 135 </p>
     <p style="color:red">Also, if you get a 502 error it's probably because you have too many schedules. For example E245, E243, ME 234, E 321, and E344 have 1259 possible schedules, which is a lot for the small server to figure out and send across the web.</p>
-    <b><u>BE SURE</u> to put a space between the letters and the numbers, or else it wont get scheduled. Ex: CS 115, not CS115.<br>
-    You don't need to add recitation, labs, or lectures seperately, it does that for you.</b>
+    -->
+    <h4>Enter up to 10 courses to schedule</h4>
+    <p>If you want or need to enter more than 10 contact me to increase the number, for now I just entered 10 because that's probably the most anyone needs</p>
+    <p>You don't need to add recitation, labs, or lectures seperately, it does that for you.</p>
     <form action="/schedules" method="POST">
         {% for i in range(1,(quantity+1)) %}
             <b>Course {{ i }}:</b><br>
-            <input type="text" name="text{{ i }}" value="{{ default_vals[i-1] }}"><br>
+            <input type="text" name="text{{ i }}" paceholder="{{ default_vals[i-1] }}" pattern="[A-Z]{1,}\s\d{3}" title="Course code in the form of 'AA ###'"><br>
         {% endfor %}
         <input type="submit" name="my-form" value="Send">
     </form>
