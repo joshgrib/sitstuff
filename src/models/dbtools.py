@@ -9,22 +9,15 @@ import sqlite3
 #DATABASE = 'course_info.db'
 #TABLE = 'courses'
 
-#class genericDB:
-
-
-class CourseDB:
+class GenericDB:
     """
-    A class for accessing a database name 'courses'
-    With the following schema:
-    dept|number|name|lecture|recitation|homework|exams|final
-    with each value of type 'text',
-    except 'number' which is integer
+    Some tools for accessing a database easier
     """
     def __init__(self, database, table):
         self.__database = database
-        self.__table = table
-        self.__conn = self.get_conn()
-        self.__cursor = self.get_cursor()
+        self.__table    = table
+        self.__conn     = self.get_conn()
+        self.__cursor   = self.get_cursor()
     def get_conn(self):
         return sqlite3.connect(self.__database)
     def get_cursor(self):
@@ -40,6 +33,56 @@ class CourseDB:
     def close_db(self):
         self.__conn.commit()
         self.__conn.close()
+
+    def delete_table(self):
+        query = "DROP TABLE {0}".format(self.__table)
+        self.ex_and_comm(query)
+    def get_table(self):
+        query = "SELECT * FROM {0} ".format(self.__table)
+        return self.ex_and_return(query)
+    def print_table(self):
+        table = self.get_table()
+        for row in table:
+            print row
+
+    def update_value(self, row, row_key, col, info):
+        query = "UPDATE {0} ".format(self.__table)
+        query += "SET {0}='{1}' ".format(col, info)
+        query += "WHERE {0}='{1}'".format(row, row_key)
+        self.ex_and_comm(query)
+    def get_value(self, row, row_key, col):
+        query = "SELECT {0} FROM {1} ".format(col, self.__table)
+        query += "WHERE {0}='{1}'".format(row, row_key)
+        #the following nonsense to to make sure I only get the text
+        #of the first result
+        for result in self.ex_and_return(query):
+            return result[0]
+
+    def get_col_vals(self, col):
+        query = "SELECT DISTINCT {0} FROM {1}".format(col, self.__table)
+        resp = []
+        for result in self.ex_and_return(query):
+            resp += result
+        return resp
+
+    def __str__(self):
+        return "Table {0} in file {1}".format(self.__table, self.__database)
+
+class CourseDB(GenericDB):
+    """
+    A class for accessing a database name 'courses'
+    With the following schema:
+    dept|number|name|lecture|recitation|homework|exams|final
+    with each value of type 'text',
+    except 'number' which is integer
+    """
+    def __init__(self, database, table):
+        GenericDB.__init__(self, database, table)
+        self.__database = database
+        self.__table    = table
+        self.__conn     = self.get_conn()
+        self.__cursor   = self.get_cursor()
+
     def create_table(self):
         """
         Creates the initial table in the db and schema
@@ -57,17 +100,10 @@ class CourseDB:
         query += "exams      text,"
         query += "final      text)"
         self.ex_and_comm(query)
-    def delete_table(self):
-        query = "DROP TABLE {0}".format(self.__table)
-        self.ex_and_comm(query)
     def get_table(self):
         query = "SELECT * FROM {0} ".format(self.__table)
         query += "ORDER BY dept ASC, number ASC"
         return self.ex_and_return(query)
-    def print_table(self):
-        table = self.get_table()
-        for row in table:
-            print row
 
     def add_course(self, dept, num, name):
         query = "INSERT INTO {0} ".format(self.__table)
@@ -121,21 +157,18 @@ class CourseDB:
     def get_final(self, dept, num):
         return self.get_value(dept, num, 'final')
 
-    def __str__(self):
-        return "Table {0} in file {1}".format(self.__table, self.__database)
-
     def get_course_HTML_helper(self, dept, num, name, lecture, recitation, homework, exams, final):
         title = '<h3 id="{0}">{0}{1} - {2}</h3>'.format(dept, num, name)
         info = ''
-        if (lecture != 'None'):
+        if (lecture!=''    and lecture!='None'):
             info += "<b>Lecture:</b>{0}<br>".format(lecture)
-        if (recitation != 'None'):
+        if (recitation!='' and recitation!='None'):
             info += "<b>Recitation:</b>{0}<br>".format(recitation)
-        if (homework != 'None'):
+        if (homework!=''   and homework!='None'):
             info += "<b>Homework:</b>{0}<br>".format(homework)
-        if (exams != 'None'):
+        if (exams!=''      and exams!='None'):
             info += "<b>Exams:</b>{0}<br>".format(exams)
-        if (final != 'None'):
+        if (final!=''      and final!='None'):
             info += "<b>Final:</b>{0}<br>".format(final)
         return title + info
     def get_course_HTML(self, c):
@@ -147,11 +180,7 @@ class CourseDB:
             html += self.get_course_HTML(row)
         return html
     def get_depts(self):
-        query = "SELECT DISTINCT dept FROM {0}".format(self.__table)
-        resp = []
-        for result in self.ex_and_return(query):
-            resp += result
-        return resp
+        return self.get_col_vals('dept')
 
 
 if __name__ == '__main__':
