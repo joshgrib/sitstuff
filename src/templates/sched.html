@@ -37,12 +37,12 @@
     {% for combo in combos %}
     <div id="large-3 columns">
         <b>Schedule {{ combo }}:</b> <a href="{{ combos[combo]['url'] }}" target="_blank">{{ combos[combo]['list'] }}</a>
-        </br>
+        <br />
         <div id="my-div">
             <iframe src="{{ combos[combo]['url'] }}" id="my-iframe" scrolling="yes" width="100%" height="100%">
             </iframe>
         </div>
-        </br>
+        <br />
     </div>
     <hr>
     {% endfor %}

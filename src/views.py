@@ -3,7 +3,7 @@
 #     Used for displaying things to users      #
 #       Uses models to get stuff to show       #
 ################################################
-from flask import Flask, render_template, request, make_response, redirect, session
+from flask import Flask, render_template, request, make_response, redirect, session, jsonify
 from src import app
 
 
@@ -102,11 +102,26 @@ def my_form_post():
     #turn string of courses entered into list
     c_list = courses_str.split(',')
     #get the schedules
+    #print "\nCourse list:"
+    #print str(c_list) + "\n"
     my_combos = scheduler.schedule(c_list)
     resp = make_response(redirect('/sched'))
     resp.set_cookie('course_combos', '', expires=0)
     resp.set_cookie('course_combos', json.dumps(my_combos))
     return resp
+
+@app.route('/get_combos', methods=['GET'])
+def getCombosAPI():
+    """
+    Upon a GET request containing csv course names in a query string...
+    Find the combos and send them as JSON
+    """
+    all_args = request.args.lists()
+    course_list = all_args[0][1][0].split(",")
+    u_COURSE_LIST = map((lambda x: x.upper()), course_list)#make all caps just in case
+    COURSE_LIST = map( str, u_COURSE_LIST)#unicode list -> list of python strs
+    combos = scheduler.schedule(COURSE_LIST)
+    return jsonify(combos)
 
 def getCombosForPage(page_num, per_page, count_of_combos, combos):
     """Returns the set of combos for the current page"""
@@ -133,7 +148,12 @@ def scheduleMe(page):
     """
     Display schedules as links and iframes
     """
-    combos = json.loads(request.cookies.get('course_combos'))
+    querystring_combos = request.cookies.get('course_combos')
+    if not querystring_combos:
+       return render_template('404.html'), 404
+    combos = json.loads(querystring_combos)
+    #print querystring_combos
+
     count = len(combos)
     pagination_needed = count > PER_PAGE
     this_page_combos = combos
