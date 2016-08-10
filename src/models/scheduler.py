@@ -39,8 +39,6 @@ def cleanupElements(this_root):  # called from schedule()
                 pass
             else:
                 course.remove(element)
-            # I know I should be able to do "if not element.tag == 'Meeting':"
-            # but that doesn't work for some reason...
     return this_root
 
 def fixSpacing(this_root):  # called from schedule()
@@ -129,9 +127,6 @@ def getBigDict(this_root):  # called from schedule()
 
         for meeting in course:  # write the meetings to the section lists
             info = meeting.attrib
-            """
-                Catch the error for 'Day', then maybe add the course to a global list of courses that have errors
-            """
             try:
                 day = info['Day']
                 startTime = info['StartTime']
@@ -148,6 +143,7 @@ def getBigDict(this_root):  # called from schedule()
                             [letter, startTime, endTime])
             except KeyError:
                 pass
+                #TOGGLE below for list of courses that cause errors
                 #global global_class_error_list
                 #global_class_error_list.append(str(course.get('Section')))
     return big_dict
@@ -200,6 +196,7 @@ def checkCombination(courseDict, inputList):  # called from findAllCombos()
                         conflicts = conflicts + 1
     if conflicts == 0:  # if there were no conflicts, return true
         return True
+    #return False #maybe this should be here?
 
 def findAllCombos(courseDict, callNumbers):  # called from schedule()
     '''This function goes through the nested courses, stores lists of all possible combinations of courses, and prints them'''
