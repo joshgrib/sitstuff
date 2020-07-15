@@ -4,20 +4,24 @@
 
 This is a website I made to be a resource for the students of Stevens Institute of Technology
 
-###Future plan: Use topological search to make a study plan creator! Given a list of courses, possibly gotten from parsing one of the pages at [the school website](http://stevens.edu), it would supply one or possibly more study plans, taking into account prereqs and coreqs.
+> **Future plan:** Use topological search to make a study plan creator! Given a list of courses, possibly gotten from parsing one of the pages at [the school website](http://stevens.edu), it would supply one or possibly more study plans, taking into account prereqs and coreqs.
 
-##Background
+## Background
+
 So at Stevens the only way to reasonably figure out your schedule for future semesters is to use the course scheduler available [here](https://web.stevens.edu/scheduler/). You can search for classes and see different offerings, and work out a schedule that suits you best.To figure out your schedule you basically just need to use trial and error until you create one that works and you're relatively happy with. I want to make it so that you can enter the courses you need to take, and all possible schedules will be generated.
 
 That's what inspired me to make a tool to see all possible schedules you could have, given the classes you want to take. Then I wanted to make it a web app, then it inherited the goal of another website I had to host course info.
 
-##Approach
+## Approach
+
 So using [the scheduler API](https://www.thegreatco.com/projects/scheduler-api/), you can request the XML for any semester. I take the XML and a list of courses and pull out the info I need, and turn it into a big nested dictionary. Then I go through all the courses and sections, find all possible combinations, and check for conflicts. Any schedules with no conflicts are put into a new dictionary, and sent through flask to make the HTML to display for the user.
 
-##Hosting/tech
+## Hosting/tech
+
 I'm using [pythonanywhere](www.pythonanywhere.com) to host the site and handle the server stuff. That's where anything from this repo goes. Then I'm using [MacHighway](http://www.machighway.com/) to host the static, non-HTML files, mainly the stylesheet and any pdfs.
 
-##Python libraries
+## Python libraries
+
 **flask** - the web framework that kinda runs everything
 
 **json** - Course combos are stored as JSON in a cookie
@@ -40,7 +44,8 @@ I'm using [pythonanywhere](www.pythonanywhere.com) to host the site and handle t
 
 **itertools** - to find all possible course combos
 
-##Key files
+## Key files
+
 **run.py** - the main file for flask - runs the website
 
 **course_class.py** - a python class to represent a course
@@ -53,7 +58,8 @@ I'm using [pythonanywhere](www.pythonanywhere.com) to host the site and handle t
 
 **templates/** - all the HTML files
 
-##Important processes
+## Important processes
+
 **Parsing XML** - The XML file is iterated over in different ways to pull out the info I need to schedule the courses, and all the info is saved as a (pretty nested) dictionary
 
 **Scheduling** - Given the list of courses to be scheduled, all possible combinations are found. Then each combination is checked against the dictionary from "Parsing XML" to find conflicts. If no conflicts are found, the combination is added to a list of good combos
@@ -62,7 +68,7 @@ I'm using [pythonanywhere](www.pythonanywhere.com) to host the site and handle t
 
 **Data storage** - The xml file is not stored, it is saved temporarily, parsed and deleted. This allows each schedule to always have the most recent info. The course info is stored in `courses.dat`. All the `Course` objects are stored in a list, then that list is saved to (and loaded from) the file through pickle. The functions `save_data(data)` and `load_data()` are in the `course_class` module.
 
-##Contributing
+## Contributing
 Clone the repo, make a secrets.py with the following:
 ```
 def send_message():
